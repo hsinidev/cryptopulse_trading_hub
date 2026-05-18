@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-focus:focus-within {
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+            border-color: #39FF14 !important;
+        }
+        .glass-panel {
+            background: rgba(44, 44, 44, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-surface-variant": "#baccb0",
+                        "on-tertiary": "#690006",
+                        "outline-variant": "#3c4b35",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#79ff5b",
+                        "on-tertiary-container": "#c50015",
+                        "on-primary-fixed": "#022100",
+                        "tertiary": "#fff8f7",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#303030",
+                        "on-primary-container": "#107100",
+                        "inverse-primary": "#106e00",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#095300",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#2ae500",
+                        "primary-container": "#39ff14",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb4ab",
+                        "on-primary": "#053900",
+                        "on-background": "#e5e2e1",
+                        "primary": "#efffe3",
+                        "background": "#0D0D0D",
+                        "outline": "#85967c",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#93000c",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#410002",
+                        "surface-tint": "#2ae500",
+                        "tertiary-container": "#ffd3ce",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353534",
+                        "secondary-container": "#474747",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "12px",
+                        "md": "16px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-reg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "data-mono": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-reg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "data-mono": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-reg antialiased overflow-hidden">
+<!-- Auth Portal Shell -->
+<main class="flex min-h-screen">
+<!-- Left Side: Brand Graphic & Stats -->
+<section class="hidden lg:flex lg:w-1/2 relative bg-[#0D0D0D] border-r border-[#333333] flex-col justify-between p-xl overflow-hidden">
+<!-- Background Visual -->
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A high-fidelity digital rendering of complex blockchain data nodes interconnected by glowing neon green filaments. The scene is set in a dark, atmospheric void with deep matte black shadows and sharp technical details. Flickering data streams and geometric wireframes create a sense of high-speed financial processing and cryptographic security. The aesthetic is elite technical, emphasizing precision and sovereignty through a minimalist cyber-tech lens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaUCxDPKa9pRuJzB-byqe9cM7v91edxrU0ShT3avkDKyZ7kd4m4G8MXgEUDRaeIl4zUzvSVzYqd_R1FX6yxHoXdtT0EoavCf8xDyM0P71pC8hjzb-VLmgQjghwCD_RaqpYnQSKVqBCsnN5tqZXN_vRGj1z3cGD0UCVfcN4k2vYv7Ojza8Uw21ZNXYebsxPSPltqZTQl0N5fkXvmJl_N0T8OgQLKo8HUSGB52SBpNvg2qhKY2n1x6_6goKgmNf0wpLw0b7lvHwRrhc"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+</div>
+<!-- Brand Header -->
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">pulse_alert</span>
+<h1 class="font-headline-md text-headline-md tracking-tighter text-on-surface">CRYPTOPULSE<span class="text-primary-container">_</span></h1>
+</div>
+<div class="inline-block bg-primary-container/10 border border-primary-container/20 px-3 py-1 rounded-sm">
+<span class="font-label-caps text-label-caps text-primary-container uppercase">System Status: Optimal</span>
+</div>
+</div>
+<!-- Rotating Stats (Bento Style) -->
+<div class="relative z-10 grid grid-cols-2 gap-gutter">
+<div class="glass-panel p-md">
+<p class="font-label-caps text-label-caps text-zinc-500 uppercase mb-1">Global Volume</p>
+<p class="font-headline-md text-headline-md text-on-surface">$4.2B <span class="text-primary-container text-xs">▲ 12%</span></p>
+</div>
+<div class="glass-panel p-md">
+<p class="font-label-caps text-label-caps text-zinc-500 uppercase mb-1">Active Nodes</p>
+<p class="font-headline-md text-headline-md text-on-surface">18,204</p>
+</div>
+<div class="glass-panel col-span-2 p-md flex items-center justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-zinc-500 uppercase mb-1">BTC / USD</p>
+<p class="font-headline-md text-headline-md text-on-surface">64,281.04</p>
+</div>
+<div class="h-12 w-32">
+<!-- Sparkline Placeholder -->
+<svg class="w-full h-full stroke-primary-container fill-none" viewbox="0 0 100 40">
+<path d="M0 35 Q 20 10 40 25 T 80 5 T 100 15" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Footer Meta -->
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps text-zinc-600 max-w-xs">
+                    Accessing Secure Layer 2 Infrastructure. Your keys, your pulse.
+                </p>
+</div>
+</section>
+<!-- Right Side: Auth Form -->
+<section class="w-full lg:w-1/2 flex flex-col items-center justify-center p-md lg:p-xl relative">
+<div class="w-full max-w-[440px] space-y-xl">
+<!-- Form Header -->
+<div class="text-center lg:text-left">
+<h2 class="font-display-lg text-headline-md lg:text-display-lg text-on-surface mb-2 uppercase tracking-tight">Access Terminal</h2>
+<p class="text-zinc-500 font-body-reg">Enter your credentials to synchronize with the network.</p>
+</div>
+<!-- Auth Tabs -->
+<div class="flex border-b border-[#333333]">
+<button class="flex-1 py-3 font-label-caps text-label-caps text-primary-container border-b-2 border-primary-container">SIGN IN</button>
+<button class="flex-1 py-3 font-label-caps text-label-caps text-zinc-500 hover:text-zinc-300 transition-colors">CREATE ACCOUNT</button>
+</div>
+<!-- Form Fields -->
+<form class="space-y-lg">
+<div class="space-y-md">
+<!-- Email Input -->
+<div class="group">
+<div class="relative flex flex-col glass-panel neon-glow-focus transition-all duration-200">
+<label class="absolute -top-2 left-3 bg-[#0D0D0D] px-1 font-label-caps text-[10px] text-zinc-500 group-focus-within:text-primary-container transition-colors">EMAIL_ADDRESS</label>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface py-4 px-4 font-data-mono text-sm placeholder:text-zinc-700" placeholder="operator@cryptopulse.net" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="group">
+<div class="relative flex flex-col glass-panel neon-glow-focus transition-all duration-200">
+<label class="absolute -top-2 left-3 bg-[#0D0D0D] px-1 font-label-caps text-[10px] text-zinc-500 group-focus-within:text-primary-container transition-colors">ENCRYPTION_KEY</label>
+<div class="flex items-center">
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface py-4 px-4 font-data-mono text-sm placeholder:text-zinc-700" placeholder="••••••••••••" type="password"/>
+<button class="px-4 text-zinc-500 hover:text-primary-container" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 2FA Input -->
+<div class="group">
+<div class="relative flex flex-col glass-panel neon-glow-focus transition-all duration-200">
+<label class="absolute -top-2 left-3 bg-[#0D0D0D] px-1 font-label-caps text-[10px] text-zinc-500 group-focus-within:text-primary-container transition-colors">2FA_TOKEN</label>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-zinc-600 pl-4 text-sm">security</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface py-4 px-4 font-data-mono text-sm placeholder:text-zinc-700" placeholder="000000" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 rounded-none bg-zinc-900 border-[#333333] text-primary-container focus:ring-primary-container focus:ring-offset-background" type="checkbox"/>
+<span class="font-label-caps text-[10px] text-zinc-500 group-hover:text-zinc-300">PERSISTENT SESSION</span>
+</label>
+<a class="font-label-caps text-[10px] text-primary-container hover:underline" href="#">FORGOT ACCESS KEY?</a>
+</div>
+<!-- Action Buttons -->
+<div class="pt-4">
+<button class="w-full h-14 bg-primary-container text-[#0D0D0D] font-label-caps text-label-caps tracking-[0.2em] font-black hover:bg-primary-fixed-dim transition-all active:scale-[0.98] shadow-[0_0_20px_rgba(57,255,20,0.3)]" type="submit">
+                            INITIALIZE_SESSION
+                        </button>
+</div>
+</form>
+<!-- Divider -->
+<div class="flex items-center gap-4">
+<div class="h-[1px] flex-1 bg-[#333333]"></div>
+<span class="font-label-caps text-[10px] text-zinc-600 uppercase">External Auth Providers</span>
+<div class="h-[1px] flex-1 bg-[#333333]"></div>
+</div>
+<!-- Social Login Options -->
+<div class="grid grid-cols-2 gap-gutter">
+<button class="flex items-center justify-center gap-2 h-12 glass-panel hover:bg-[#333333] transition-colors">
+<img class="w-4 h-4 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100" data-alt="Google authentication logo in a minimalist grayscale technical UI theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1zzzCjaqH6vUFEorm4vOo4CMh1FqnDqvbL_HBpDq26eYPF_oXGB8xv5Fp_IcJ9fmZVCfhrPGhzbogdxYZOyYN4mLLf4bAiyscQlXLnKIR8Ja_KsRiKkzFI9TQGHUOr-2B282lKncxN-U51mcmwbP667v_x7kn8TLfo2Bcz4VG2I6hCJ4kGTMqhOn6rW3kVYB2nTlTRZoJtYlimo3IWTAyTaw76iQ6lpDfYqw7YBjMpcPAA-dH0BhlV_k5hjfa9ExLDjDLm1BCMwg"/>
+<span class="font-label-caps text-[10px] text-zinc-300">GOOGLE</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 glass-panel hover:bg-[#333333] transition-colors">
+<span class="material-symbols-outlined text-zinc-300 text-lg">account_balance_wallet</span>
+<span class="font-label-caps text-[10px] text-zinc-300">METAMASK</span>
+</button>
+</div>
+<!-- Legal / Footer -->
+<p class="text-center font-label-caps text-[10px] text-zinc-700 uppercase tracking-widest leading-relaxed">
+                    By accessing this terminal, you agree to the <a class="text-zinc-500 hover:text-primary-container underline" href="#">Protocol Terms</a> &amp; <a class="text-zinc-500 hover:text-primary-container underline" href="#">Security Disclosure</a>.
+                </p>
+</div>
+<!-- Abstract Background Element for Mobile -->
+<div class="lg:hidden absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-container to-transparent opacity-20"></div>
+</section>
+</main>
+<!-- Header Overlay (Fixed) -->
+<header class="fixed top-0 left-0 right-0 h-16 flex items-center justify-between px-md lg:px-xl z-50 pointer-events-none">
+<div class="lg:hidden flex items-center gap-2 pointer-events-auto">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">pulse_alert</span>
+</div>
+<div class="flex items-center gap-4 pointer-events-auto">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-primary-container shadow-[0_0_8px_#39FF14] animate-pulse"></span>
+<span class="font-label-caps text-[10px] text-zinc-400">MAINNET_01</span>
+</div>
+<div class="h-4 w-[1px] bg-[#333333]"></div>
+<span class="font-label-caps text-[10px] text-zinc-400">LATENCY: 14MS</span>
+</div>
+</header>
+</body></html>

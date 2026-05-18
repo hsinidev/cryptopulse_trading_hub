@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1b",
+                        "secondary": "#c8c6c5",
+                        "on-tertiary": "#690006",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#3a3939",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#053900",
+                        "on-secondary": "#303030",
+                        "surface-container": "#201f1f",
+                        "surface-variant": "#353534",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#410002",
+                        "primary-fixed-dim": "#2ae500",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-background": "#e5e2e1",
+                        "surface": "#131313",
+                        "surface-tint": "#2ae500",
+                        "tertiary-fixed": "#ffdad6",
+                        "primary-fixed": "#79ff5b",
+                        "on-surface-variant": "#baccb0",
+                        "outline-variant": "#3c4b35",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-container": "#c50015",
+                        "on-primary-fixed-variant": "#095300",
+                        "tertiary": "#fff8f7",
+                        "on-primary-fixed": "#022100",
+                        "tertiary-fixed-dim": "#ffb4ab",
+                        "inverse-primary": "#106e00",
+                        "on-primary-container": "#107100",
+                        "secondary-fixed": "#e4e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#39ff14",
+                        "on-tertiary-fixed-variant": "#93000c",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#ffd3ce",
+                        "on-secondary-fixed-variant": "#474747",
+                        "secondary-container": "#474747",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-surface": "#e5e2e1",
+                        "outline": "#85967c",
+                        "primary": "#efffe3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "container-margin": "16px",
+                        "xl": "40px",
+                        "md": "16px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Space Grotesk"],
+                        "data-mono": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-reg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "data-mono": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-reg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-green {
+            filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));
+        }
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .3; }
+        }
+        .glass-panel {
+            background: rgba(44, 44, 44, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(51, 51, 51, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0D0D0D] text-on-surface font-body-reg antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-14 bg-[#0D0D0D]/80 backdrop-blur-xl border-b border-[#333333]">
+<div class="flex items-center gap-2 text-xl font-black text-[#39FF14]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="sensors">sensors</span>
+<span class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold">CryptoPulse</span>
+<div class="w-2 h-2 rounded-full bg-[#39FF14] pulse-animation neon-glow-green"></div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#2C2C2C] transition-colors active:scale-95 duration-75">
+<span class="material-symbols-outlined text-secondary" data-icon="search">search</span>
+</button>
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-margin max-w-4xl mx-auto">
+<!-- Search & Filter Controls -->
+<section class="mb-lg">
+<div class="flex flex-col gap-sm">
+<div class="relative">
+<input class="w-full bg-[#2C2C2C] border-none text-on-surface font-label-caps h-14 px-md focus:ring-1 focus:ring-[#39FF14] placeholder:text-secondary/30 transition-all" placeholder="SEARCH ASSETS" type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary/40" data-icon="tune">tune</span>
+</div>
+<div class="flex gap-xs">
+<button class="flex-1 py-xs font-label-caps bg-primary-container text-on-primary-container border border-primary-container">ALL</button>
+<button class="flex-1 py-xs font-label-caps bg-transparent border border-[#333333] text-secondary hover:bg-[#2C2C2C] transition-colors">FAVORITES</button>
+<button class="flex-1 py-xs font-label-caps bg-transparent border border-[#333333] text-secondary hover:bg-[#2C2C2C] transition-colors">GAINERS</button>
+<button class="flex-1 py-xs font-label-caps bg-transparent border border-[#333333] text-secondary hover:bg-[#2C2C2C] transition-colors">LOSERS</button>
+</div>
+</div>
+</section>
+<!-- Market List Table Header -->
+<div class="grid grid-cols-[1fr_auto_auto] items-center px-sm py-xs border-b border-[#333333] mb-xs">
+<span class="font-label-caps text-secondary/50 text-[10px]">ASSET / VOL</span>
+<span class="font-label-caps text-secondary/50 text-[10px] text-right">CHART</span>
+<span class="font-label-caps text-secondary/50 text-[10px] text-right">PRICE / 24H</span>
+</div>
+<!-- Asset High-Density List -->
+<div class="flex flex-col gap-xs">
+<!-- BTC Row -->
+<div class="grid grid-cols-[1fr_100px_auto] items-center p-md bg-[#1c1b1b] border border-[#333333] hover:border-[#39FF14]/30 transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 flex items-center justify-center bg-[#0D0D0D] border border-[#333333]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="currency_bitcoin">currency_bitcoin</span>
+</div>
+<div>
+<div class="font-headline-md text-[18px] text-white">BTC</div>
+<div class="font-label-caps text-[10px] text-secondary/40">VOL $42.5B</div>
+</div>
+</div>
+<div class="h-8 flex items-end justify-end">
+<svg class="w-full h-full stroke-[#39FF14] fill-[#39FF14]/5 stroke-[1.5px]" viewbox="0 0 100 30">
+<path d="M0 25 Q 10 20, 20 22 T 40 15 T 60 10 T 80 18 T 100 5 L 100 30 L 0 30 Z"></path>
+</svg>
+</div>
+<div class="text-right ml-lg">
+<div class="font-data-mono text-[16px] text-[#39FF14]">$67,492.20</div>
+<div class="font-label-caps text-[11px] text-[#39FF14]">+2.45%</div>
+</div>
+</div>
+<!-- ETH Row -->
+<div class="grid grid-cols-[1fr_100px_auto] items-center p-md bg-[#1c1b1b] border border-[#333333] hover:border-[#39FF14]/30 transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 flex items-center justify-center bg-[#0D0D0D] border border-[#333333]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="eth">currency_bitcoin</span>
+</div>
+<div>
+<div class="font-headline-md text-[18px] text-white">ETH</div>
+<div class="font-label-caps text-[10px] text-secondary/40">VOL $18.2B</div>
+</div>
+</div>
+<div class="h-8 flex items-end justify-end">
+<svg class="w-full h-full stroke-on-tertiary-container fill-on-tertiary-container/5 stroke-[1.5px]" viewbox="0 0 100 30">
+<path d="M0 5 Q 10 15, 20 12 T 40 25 T 60 20 T 80 28 T 100 25 L 100 30 L 0 30 Z"></path>
+</svg>
+</div>
+<div class="text-right ml-lg">
+<div class="font-data-mono text-[16px] text-on-tertiary-container">$3,421.15</div>
+<div class="font-label-caps text-[11px] text-on-tertiary-container">-1.12%</div>
+</div>
+</div>
+<!-- SOL Row -->
+<div class="grid grid-cols-[1fr_100px_auto] items-center p-md bg-[#1c1b1b] border border-[#333333] hover:border-[#39FF14]/30 transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 flex items-center justify-center bg-[#0D0D0D] border border-[#333333]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="token">token</span>
+</div>
+<div>
+<div class="font-headline-md text-[18px] text-white">SOL</div>
+<div class="font-label-caps text-[10px] text-secondary/40">VOL $5.7B</div>
+</div>
+</div>
+<div class="h-8 flex items-end justify-end">
+<svg class="w-full h-full stroke-[#39FF14] fill-[#39FF14]/5 stroke-[1.5px]" viewbox="0 0 100 30">
+<path d="M0 28 L 20 22 L 40 18 L 60 5 L 80 8 L 100 2 L 100 30 L 0 30 Z"></path>
+</svg>
+</div>
+<div class="text-right ml-lg">
+<div class="font-data-mono text-[16px] text-[#39FF14]">$145.88</div>
+<div class="font-label-caps text-[11px] text-[#39FF14]">+8.72%</div>
+</div>
+</div>
+<!-- DOT Row -->
+<div class="grid grid-cols-[1fr_100px_auto] items-center p-md bg-[#1c1b1b] border border-[#333333] hover:border-[#39FF14]/30 transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 flex items-center justify-center bg-[#0D0D0D] border border-[#333333]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="category">category</span>
+</div>
+<div>
+<div class="font-headline-md text-[18px] text-white">DOT</div>
+<div class="font-label-caps text-[10px] text-secondary/40">VOL $0.9B</div>
+</div>
+</div>
+<div class="h-8 flex items-end justify-end">
+<svg class="w-full h-full stroke-[#39FF14] fill-[#39FF14]/5 stroke-[1.5px]" viewbox="0 0 100 30">
+<path d="M0 25 L 10 24 L 30 20 L 50 18 L 70 15 L 90 12 L 100 10 L 100 30 L 0 30 Z"></path>
+</svg>
+</div>
+<div class="text-right ml-lg">
+<div class="font-data-mono text-[16px] text-[#39FF14]">$7.24</div>
+<div class="font-label-caps text-[11px] text-[#39FF14]">+0.51%</div>
+</div>
+</div>
+<!-- ADA Row -->
+<div class="grid grid-cols-[1fr_100px_auto] items-center p-md bg-[#1c1b1b] border border-[#333333] hover:border-[#39FF14]/30 transition-all active:scale-[0.98] cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 flex items-center justify-center bg-[#0D0D0D] border border-[#333333]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="hexagon">hexagon</span>
+</div>
+<div>
+<div class="font-headline-md text-[18px] text-white">ADA</div>
+<div class="font-label-caps text-[10px] text-secondary/40">VOL $1.1B</div>
+</div>
+</div>
+<div class="h-8 flex items-end justify-end">
+<svg class="w-full h-full stroke-on-tertiary-container fill-on-tertiary-container/5 stroke-[1.5px]" viewbox="0 0 100 30">
+<path d="M0 10 L 20 15 L 40 22 L 60 28 L 80 25 L 100 29 L 100 30 L 0 30 Z"></path>
+</svg>
+</div>
+<div class="text-right ml-lg">
+<div class="font-data-mono text-[16px] text-on-tertiary-container">$0.452</div>
+<div class="font-label-caps text-[11px] text-on-tertiary-container">-3.21%</div>
+</div>
+</div>
+</div>
+<!-- Featured Analysis Card -->
+<section class="mt-xl">
+<div class="relative overflow-hidden p-lg border border-[#333333] bg-gradient-to-br from-[#1c1b1b] to-[#0D0D0D]">
+<div class="relative z-10">
+<span class="font-label-caps text-[#39FF14] text-[10px] mb-xs block">AI MARKET SENTIMENT</span>
+<h3 class="font-headline-md text-white mb-md">EXTREME GREED (82/100)</h3>
+<p class="font-body-reg text-secondary/70 text-sm max-w-md">Market metrics indicate a strong bullish trend for top-tier assets. Liquidity clusters suggest a resistance test at $68,500.</p>
+</div>
+<div class="absolute top-0 right-0 h-full w-1/3 opacity-20 pointer-events-none">
+<img alt="Cyber Abstract Data" class="w-full h-full object-cover" data-alt="A detailed digital art render of complex cryptographic data structures and glowing neural network connections in neon green and deep graphite. The aesthetic is elite technical cyber-tech with glassmorphic layers and high-contrast digital artifacts against a matte black foundation. The lighting is high-key neon pulsing against a dark void, creating a mood of high-stakes financial technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXnQqi8z_xn5SGCotwT7WiWGDadmi7QgUpuE6g7-6HULzO2FYC3Kg7OjpnF8Cs1F8Rpkn6dMTvG90eckLTw8FL5GEyLrinePcMojTg0W5knxqRRSJmawA4rdvDMdpzPiSazMNrWPuibCgjfP94L4MnNmxLECQImbQfZdJBvzDdwj6W6NswjIGSromkwtVTyxHZiRDqlUF15khz7eB6h3O3fBJT4AaqlOgBio4GPTKe5q5-H5_arF4NtRcXK3DtmLNspbSD8peO2oQ"/>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#0D0D0D] border-t border-[#333333]">
+<a class="flex flex-col items-center justify-center text-[#39FF14] drop-shadow-[0_0_8px_rgba(57,255,20,0.6)]" href="#">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">MARKETS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">PORTFOLIO</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="swap_horizontal_circle">swap_horizontal_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">TRADE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">SECURITY</span>
+</a>
+</nav>
+</body></html>

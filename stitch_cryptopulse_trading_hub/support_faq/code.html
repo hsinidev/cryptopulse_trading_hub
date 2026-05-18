@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-surface-variant": "#baccb0",
+                        "on-tertiary": "#690006",
+                        "outline-variant": "#3c4b35",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#79ff5b",
+                        "on-tertiary-container": "#c50015",
+                        "on-primary-fixed": "#022100",
+                        "tertiary": "#fff8f7",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#303030",
+                        "on-primary-container": "#107100",
+                        "inverse-primary": "#106e00",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#095300",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#2ae500",
+                        "primary-container": "#39ff14",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb4ab",
+                        "on-primary": "#053900",
+                        "on-background": "#e5e2e1",
+                        "primary": "#efffe3",
+                        "background": "#131313",
+                        "outline": "#85967c",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#93000c",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#410002",
+                        "surface-tint": "#2ae500",
+                        "tertiary-container": "#ffd3ce",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353534",
+                        "secondary-container": "#474747",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "12px",
+                        "md": "16px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-reg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "data-mono": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-reg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "data-mono": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+        }
+        .cyber-grid {
+            background-image: linear-gradient(#333333 1px, transparent 1px), linear-gradient(90deg, #333333 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-[#0D0D0D] text-on-surface font-body-reg antialiased">
+<!-- TopNavBar -->
+<header class="bg-[#0D0D0D]/95 backdrop-blur-md text-[#39FF14] font-['Space_Grotesk'] uppercase tracking-widest text-xs border-b border-[#333333] flex justify-between items-center w-full px-6 sticky top-0 z-50 h-16">
+<div class="flex items-center gap-6">
+<span class="text-xl font-black italic text-[#39FF14] drop-shadow-[0_0_5px_#39FF14]">NEON_TERMINAL</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors duration-200" href="#">Terminal</a>
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors duration-200" href="#">Markets</a>
+<a class="text-[#39FF14] border-b-2 border-[#39FF14] pb-1" href="#">System</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-data-mono text-[#39FF14]">0.0428 BTC</span>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-zinc-800/50 transition-colors duration-200 rounded">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+</button>
+<button class="p-2 hover:bg-zinc-800/50 transition-colors duration-200 rounded">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-zinc-800/50 transition-colors duration-200 rounded">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full border border-[#39FF14]/50 overflow-hidden">
+<img alt="Professional Trader Profile" class="w-full h-full object-cover" data-alt="A high-resolution close-up of a sophisticated humanoid cybernetic face with glowing green optical circuits. The aesthetic is dark and tech-focused, featuring matte black plating and intricate silver micro-wiring. The lighting is moody, with sharp neon green highlights reflecting off metallic surfaces, creating an elite, professional trader atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBH5PwntE43WfftJHWsgQYAMW2l5ebKpB7txhyD4urpD_f9g9Jg9H4uYbj8fGt_fZh_1-_BEF5MwmTXUqknuSYEygEJ7oM8TetZ81xKVJQApFhcmzEUJ3TEnopJoNVdJwj6R8IuQ4_eeoZj2-JF6kLUgaMCYNGW4haws-fnuIE4PE5iyIKQNy96Se8x6J-3evTNom3uz7deQcX61PjaMOlQeHenKe-wUtgn5CHULTXweIMdjy_mmQywPQD73V3vg5K72PrRNYcCmQ"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full z-40 flex-col pt-16 bg-[#0D0D0D] h-screen w-64 border-r border-[#333333] font-['Space_Grotesk'] font-medium antialiased">
+<div class="px-6 py-8 border-b border-[#333333]">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-[#39FF14] shadow-[0_0_8px_#39FF14]"></div>
+<div>
+<div class="text-sm font-bold text-[#39FF14]">OPERATOR_01</div>
+<div class="text-[10px] text-zinc-500 uppercase tracking-tighter">Verified Node</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 py-4">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span>Terminal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span>Markets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span>Portfolio</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#39FF14]/10 text-[#39FF14] border-l-4 border-[#39FF14] shadow-[inset_0_0_15px_rgba(57,255,20,0.1)]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>System</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#333333]">
+<button class="w-full py-3 bg-[#39FF14] text-black font-bold text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">DEPOSIT</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-6 md:p-12 cyber-grid">
+<!-- Hero Search Section -->
+<section class="max-w-4xl mx-auto mb-16 text-center">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 uppercase">Command_Center_Support</h1>
+<p class="text-zinc-400 font-body-reg text-lg mb-8 max-w-2xl mx-auto">Access the encrypted knowledge base. Retrieve technical documentation and operational protocols for the NEON_TERMINAL ecosystem.</p>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="search">search</span>
+</div>
+<input class="w-full bg-[#2C2C2C] border-none text-white font-data-mono py-6 pl-14 pr-6 focus:ring-1 focus:ring-[#39FF14] focus:bg-[#1a1a1a] transition-all border border-[#333333] shadow-[0_0_15px_rgba(0,0,0,0.5)]" placeholder="QUERY_SYSTEM_PROTOCOLS..." type="text"/>
+</div>
+</section>
+<!-- Knowledge Categories Bento Grid -->
+<section class="max-w-6xl mx-auto mb-16">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Category 1 -->
+<div class="bg-[#2C2C2C]/80 backdrop-blur-sm border border-[#333333] p-8 hover:border-[#39FF14]/50 transition-all cursor-pointer group">
+<div class="mb-6">
+<span class="material-symbols-outlined text-[#39FF14] text-4xl" data-icon="terminal">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 uppercase">Trading Basics</h3>
+<p class="text-zinc-400 mb-6 font-body-reg">Fundamental protocols for order execution, leverage limits, and liquidity pool interaction.</p>
+<ul class="space-y-3 font-data-mono text-xs text-zinc-500">
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> EXECUTING_LIMIT_ORDERS
+                            </li>
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> UNDERSTANDING_SLIPPAGE
+                            </li>
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> MARGIN_REQUIREMENTS
+                            </li>
+</ul>
+</div>
+<!-- Category 2 -->
+<div class="bg-[#2C2C2C]/80 backdrop-blur-sm border border-[#333333] p-8 hover:border-[#39FF14]/50 transition-all cursor-pointer group">
+<div class="mb-6">
+<span class="material-symbols-outlined text-[#39FF14] text-4xl" data-icon="encrypted">encrypted</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 uppercase">Security</h3>
+<p class="text-zinc-400 mb-6 font-body-reg">Cold storage integration, 2FA hardware key setup, and account protection mandates.</p>
+<ul class="space-y-3 font-data-mono text-xs text-zinc-500">
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> HARDWARE_WALLET_CONNECT
+                            </li>
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> RESETTING_AUTH_KEYS
+                            </li>
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> SECURITY_AUDIT_LOGS
+                            </li>
+</ul>
+</div>
+<!-- Category 3 -->
+<div class="bg-[#2C2C2C]/80 backdrop-blur-sm border border-[#333333] p-8 hover:border-[#39FF14]/50 transition-all cursor-pointer group">
+<div class="mb-6">
+<span class="material-symbols-outlined text-[#39FF14] text-4xl" data-icon="code">code</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 uppercase">API Docs</h3>
+<p class="text-zinc-400 mb-6 font-body-reg">Low-latency REST and WebSocket endpoints for high-frequency algorithmic deployments.</p>
+<ul class="space-y-3 font-data-mono text-xs text-zinc-500">
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> WEBSOCKET_STREAMS
+                            </li>
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> API_RATE_LIMITS
+                            </li>
+<li class="flex items-center gap-2 group-hover:text-[#39FF14] transition-colors">
+<span class="w-1 h-1 bg-[#39FF14]"></span> AUTHENTICATION_HEADERS
+                            </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Popular Topics / Recent Updates -->
+<section class="max-w-6xl mx-auto">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight">System_Bulletins</h2>
+<div class="flex gap-2">
+<span class="px-3 py-1 border border-[#39FF14] text-[#39FF14] text-[10px] font-bold">LATEST_VER_2.4.1</span>
+<span class="px-3 py-1 border border-zinc-700 text-zinc-500 text-[10px] font-bold">STATUS: OPERATIONAL</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Topic Card -->
+<div class="bg-[#1C1B1B] border-l-4 border-l-[#39FF14] p-6 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#252424] transition-colors group">
+<div class="mb-4 md:mb-0">
+<h4 class="font-bold text-lg mb-1 group-hover:text-[#39FF14] transition-colors uppercase">Optimizing WebSocket Latency for HFT</h4>
+<p class="text-zinc-500 text-sm">Update on regional node deployments and direct backbone connections.</p>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-data-mono text-xs text-zinc-600">Updated: 04.22.2024</span>
+<span class="material-symbols-outlined text-zinc-500 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Topic Card -->
+<div class="bg-[#1C1B1B] border-l-4 border-l-transparent p-6 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#252424] transition-colors group">
+<div class="mb-4 md:mb-0">
+<h4 class="font-bold text-lg mb-1 group-hover:text-[#39FF14] transition-colors uppercase">Cross-Chain Collateralization Protocol</h4>
+<p class="text-zinc-500 text-sm">How to use multi-asset backing for leveraged positions across isolated margins.</p>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-data-mono text-xs text-zinc-600">Updated: 04.20.2024</span>
+<span class="material-symbols-outlined text-zinc-500 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Topic Card -->
+<div class="bg-[#1C1B1B] border-l-4 border-l-transparent p-6 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#252424] transition-colors group">
+<div class="mb-4 md:mb-0">
+<h4 class="font-bold text-lg mb-1 group-hover:text-[#39FF14] transition-colors uppercase">Legacy Account Migration Final Notice</h4>
+<p class="text-zinc-500 text-sm">Instructions for v1 users to upgrade to high-speed v2 infrastructure.</p>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-data-mono text-xs text-zinc-600">Updated: 04.18.2024</span>
+<span class="material-symbols-outlined text-zinc-500 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Live Chat FAB -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-[#39FF14] text-black h-16 w-16 flex items-center justify-center rounded-full shadow-[0_0_20px_#39FF14] hover:scale-110 transition-transform group">
+<span class="material-symbols-outlined text-3xl" data-icon="support_agent" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<div class="absolute right-20 bg-[#2C2C2C] border border-[#333333] px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+<span class="font-label-caps text-on-surface">CONTACT_OPERATOR</span>
+</div>
+</button>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#0D0D0D]/95 backdrop-blur-md border-t border-[#333333] h-16 flex items-center justify-around z-50 px-4">
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-[10px] font-bold">TERMINAL</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span class="text-[10px] font-bold">MARKETS</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#39FF14]">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+<span class="text-[10px] font-bold">SUPPORT</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="text-[10px] font-bold">PORTFOLIO</span>
+</button>
+</nav>
+</body></html>

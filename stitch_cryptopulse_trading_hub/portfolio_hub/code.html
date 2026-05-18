@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-surface-variant": "#baccb0",
+                        "on-tertiary": "#690006",
+                        "outline-variant": "#3c4b35",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#79ff5b",
+                        "on-tertiary-container": "#c50015",
+                        "on-primary-fixed": "#022100",
+                        "tertiary": "#fff8f7",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#303030",
+                        "on-primary-container": "#107100",
+                        "inverse-primary": "#106e00",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#095300",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#2ae500",
+                        "primary-container": "#39ff14",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb4ab",
+                        "on-primary": "#053900",
+                        "on-background": "#e5e2e1",
+                        "primary": "#efffe3",
+                        "background": "#131313",
+                        "outline": "#85967c",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#93000c",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#410002",
+                        "surface-tint": "#2ae500",
+                        "tertiary-container": "#ffd3ce",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353534",
+                        "secondary-container": "#474747",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "12px",
+                        "md": "16px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-reg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "data-mono": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-reg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "data-mono": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-active {
+            box-shadow: 0 0 10px #39FF14;
+        }
+        .glass-card {
+            background: rgba(44, 44, 44, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+        }
+        .pulse-dot {
+            box-shadow: 0 0 8px #39FF14;
+        }
+        body {
+            background-color: #0D0D0D;
+            color: #e5e2e1;
+        }
+    </style>
+</head>
+<body class="font-body-reg overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-[#0D0D0D]/95 backdrop-blur-md text-[#39FF14] font-['Space_Grotesk'] uppercase tracking-widest text-xs border-b border-[#333333] flex justify-between items-center w-full px-6 sticky top-0 z-50 h-16">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black italic text-[#39FF14] drop-shadow-[0_0_5px_#39FF14]">NEON_TERMINAL</span>
+<div class="flex items-center gap-2 ml-6 text-zinc-500">
+<span class="material-symbols-outlined text-[10px] animate-pulse pulse-dot bg-[#39FF14] rounded-full w-2 h-2"></span>
+<span class="font-label-caps text-on-surface-variant">WS_LIVE: 42ms</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined hover:bg-zinc-800/50 transition-colors duration-200 p-2 cursor-pointer" data-icon="sensors">sensors</span>
+<span class="material-symbols-outlined hover:bg-zinc-800/50 transition-colors duration-200 p-2 cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined hover:bg-zinc-800/50 transition-colors duration-200 p-2 cursor-pointer" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="h-6 w-[1px] bg-[#333333]"></div>
+<span class="font-label-caps text-[#39FF14] font-bold">0.0428 BTC</span>
+<div class="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center border border-[#333333] overflow-hidden">
+<img alt="Professional Trader Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a high-frequency crypto trader in a dark, minimalist setting. The lighting is low-key with sharp cyan and neon green highlights reflecting off a high-tech console in the background. The aesthetic is clean, technical, and authoritative, matching the elite terminal UI environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpv9yO2vSnCe1OJiaYciuXBDBxnspV42S0rNNmFFCYaoaXY-UuLrLoKNJtdLPvZSx7J1MTvHBmElN9FYR6ocnGxmXl4qKRQHX9H_ERX_nGfE8kVBHM9xw7V9KTidvmp25EJ3xBrrumC8ICyxjLZyrQ4uEUmaMFLpvH9v_TolXKfnWTZZj1OVcDM7nJreK14A8mhI7HFTtGPjQ2LUagTw86Pge0ZVOrMRi3eQ92B2mNyT0NRVQtWdvo_wtK4guDPe6qTPwRiFtuzA0"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-16 bg-[#0D0D0D] h-screen w-64 border-r border-[#333333] font-['Space_Grotesk'] font-medium antialiased">
+<div class="p-6 flex flex-col items-center border-b border-[#333333]">
+<div class="w-16 h-16 border-2 border-[#39FF14] p-1 mb-3">
+<img alt="System Pulse" class="w-full h-full opacity-80" data-alt="A futuristic geometric node icon pulsing with neon green energy against a deep matte black background. The design is abstract and technical, representing a verified node in a blockchain network. The lighting is crisp with a subtle green bloom effect on the edges of the sharp lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnzn7EWt6vWFaHuO3Cfbzw_6kI8no-zyIoloEvx_U7eoNDx85SlhwLf7g-ccF5rh9xgAl36Nj6E4PUn5w7QP3eZuCBJtWRnogpHixgS2NcWKr8VEq8h1qKEV1PNuOKUPLu3cv-kt8svYhPrevwQxxznIGgVtp-lpzaCWObngRxUAa5WX87F9VNhYW-Q1jGGba_6nN7a3chDooFAGf4ywxCRfOc0nK1IQQ55NGovRgLzrnjV8voyr4xJkO9Icz6l_IiVowzJdTFTSI"/>
+</div>
+<h3 class="text-[#39FF14] text-lg font-bold">OPERATOR_01</h3>
+<p class="text-zinc-500 text-[10px] tracking-widest uppercase">Verified Node</p>
+</div>
+<nav class="flex-1 py-4">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span>Terminal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span>Markets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#39FF14]/10 text-[#39FF14] border-l-4 border-[#39FF14] shadow-[inset_0_0_15px_rgba(57,255,20,0.1)]" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<span>Portfolio</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>System</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full py-4 bg-[#39FF14] text-black font-bold tracking-tighter hover:bg-[#32e012] transition-colors active:scale-95">DEPOSIT</button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 p-6 overflow-y-auto h-[calc(100vh-64px)] space-y-6">
+<!-- Dashboard Header / PnL Summary -->
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-8 glass-card p-6">
+<div class="flex justify-between items-end mb-6">
+<div>
+<p class="font-label-caps text-zinc-500 mb-1 uppercase">Total Equity</p>
+<h1 class="font-display-lg text-[#39FF14]">$284,930.42</h1>
+<p class="font-data-mono text-primary-container text-sm mt-1">+12.4% (+$31,204.12) <span class="text-zinc-500 ml-2">24H</span></p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-[#333333] text-zinc-400 font-label-caps text-[10px] hover:border-[#39FF14] transition-colors">1D</button>
+<button class="px-4 py-2 border border-[#39FF14] text-[#39FF14] font-label-caps text-[10px] bg-[#39FF14]/10">1W</button>
+<button class="px-4 py-2 border border-[#333333] text-zinc-400 font-label-caps text-[10px] hover:border-[#39FF14] transition-colors">1M</button>
+<button class="px-4 py-2 border border-[#333333] text-zinc-400 font-label-caps text-[10px] hover:border-[#39FF14] transition-colors">ALL</button>
+</div>
+</div>
+<!-- Large PnL Graph Placeholder -->
+<div class="h-64 w-full relative">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#39FF14" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#39FF14" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,150 Q100,120 200,140 T400,100 T600,110 T800,40 T1000,60 L1000,200 L0,200 Z" fill="url(#chartGradient)"></path>
+<path d="M0,150 Q100,120 200,140 T400,100 T600,110 T800,40 T1000,60" fill="none" stroke="#39FF14" stroke-width="2"></path>
+<circle class="animate-pulse" cx="800" cy="40" fill="#39FF14" r="4"></circle>
+</svg>
+<!-- Y-Axis Labels -->
+<div class="absolute left-0 top-0 h-full flex flex-col justify-between text-[10px] text-zinc-600 font-data-mono">
+<span>300K</span>
+<span>250K</span>
+<span>200K</span>
+<span>150K</span>
+</div>
+</div>
+</div>
+<!-- Allocation Pie Chart / Breakdown -->
+<div class="col-span-4 glass-card p-6 flex flex-col">
+<p class="font-label-caps text-zinc-500 mb-6 uppercase">Asset Allocation</p>
+<div class="flex-1 flex flex-col items-center justify-center relative">
+<!-- Circular Gauge Placeholder -->
+<div class="w-48 h-48 rounded-full border-[12px] border-[#333333] border-t-[#39FF14] border-r-[#39FF14] rotate-45 flex items-center justify-center">
+<div class="rotate-[-45deg] text-center">
+<span class="font-headline-md text-white block">BTC</span>
+<span class="text-zinc-500 font-data-mono text-sm">62.4%</span>
+</div>
+</div>
+</div>
+<div class="mt-6 space-y-2">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-[#39FF14]"></div>
+<span class="text-xs font-label-caps">BITCOIN</span>
+</div>
+<span class="font-data-mono text-xs">62.4%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-[#2C2C2C] border border-zinc-500"></div>
+<span class="text-xs font-label-caps">ETHEREUM</span>
+</div>
+<span class="font-data-mono text-xs">24.1%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-zinc-700"></div>
+<span class="text-xs font-label-caps">SOLANA</span>
+</div>
+<span class="font-data-mono text-xs">8.5%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-zinc-900"></div>
+<span class="text-xs font-label-caps">STABLES</span>
+</div>
+<span class="font-data-mono text-xs">5.0%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Assets Table -->
+<div class="glass-card">
+<div class="px-6 py-4 border-b border-[#333333] flex justify-between items-center">
+<h2 class="font-headline-md text-on-surface uppercase tracking-tight">Active Holdings</h2>
+<div class="flex gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-sm" data-icon="search">search</span>
+<input class="bg-[#0D0D0D] border border-[#333333] pl-9 pr-4 py-2 text-[10px] font-label-caps focus:border-[#39FF14] outline-none w-48" placeholder="FILTER ASSETS..." type="text"/>
+</div>
+<button class="bg-zinc-800 p-2 border border-[#333333] hover:border-zinc-500 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<table class="w-full border-collapse">
+<thead class="bg-zinc-900/50">
+<tr>
+<th class="text-left px-6 py-3 font-label-caps text-zinc-500 text-[10px] uppercase tracking-wider">Asset</th>
+<th class="text-right px-6 py-3 font-label-caps text-zinc-500 text-[10px] uppercase tracking-wider">Balance</th>
+<th class="text-right px-6 py-3 font-label-caps text-zinc-500 text-[10px] uppercase tracking-wider">Price</th>
+<th class="text-right px-6 py-3 font-label-caps text-zinc-500 text-[10px] uppercase tracking-wider">Value</th>
+<th class="text-center px-6 py-3 font-label-caps text-zinc-500 text-[10px] uppercase tracking-wider">Trend (7D)</th>
+<th class="text-right px-6 py-3 font-label-caps text-zinc-500 text-[10px] uppercase tracking-wider">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#333333]">
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-[#39FF14]/10 border border-[#39FF14]/30 flex items-center justify-center font-bold text-[#39FF14] text-xs">₿</div>
+<div>
+<p class="font-bold text-sm">BITCOIN</p>
+<p class="text-[10px] text-zinc-500">BTC</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-data-mono text-sm">2.48123000</td>
+<td class="px-6 py-4 text-right font-data-mono text-sm">$64,231.10</td>
+<td class="px-6 py-4 text-right font-data-mono text-sm text-[#39FF14]">$159,372.24</td>
+<td class="px-6 py-4">
+<div class="h-8 w-24 mx-auto">
+<svg class="w-full h-full" viewbox="0 0 100 30">
+<path d="M0,25 L10,20 L20,22 L30,15 L40,18 L50,10 L60,12 L70,5 L80,8 L90,2 L100,5" fill="none" stroke="#39FF14" stroke-width="1.5"></path>
+</svg>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[10px] font-label-caps border border-[#333333] px-3 py-1 hover:border-[#39FF14] hover:text-[#39FF14] transition-colors">TRADE</button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-zinc-800 border border-zinc-700 flex items-center justify-center font-bold text-white text-xs">Ξ</div>
+<div>
+<p class="font-bold text-sm">ETHEREUM</p>
+<p class="text-[10px] text-zinc-500">ETH</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-data-mono text-sm">24.50000000</td>
+<td class="px-6 py-4 text-right font-data-mono text-sm">$3,450.12</td>
+<td class="px-6 py-4 text-right font-data-mono text-sm text-[#39FF14]">$84,527.94</td>
+<td class="px-6 py-4">
+<div class="h-8 w-24 mx-auto">
+<svg class="w-full h-full" viewbox="0 0 100 30">
+<path d="M0,5 L10,12 L20,8 L30,15 L40,10 L50,18 L60,15 L70,22 L80,20 L90,25 L100,22" fill="none" stroke="#ffdad6" stroke-width="1.5"></path>
+</svg>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[10px] font-label-caps border border-[#333333] px-3 py-1 hover:border-[#39FF14] hover:text-[#39FF14] transition-colors">TRADE</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Recent Transactions & Logs -->
+<div class="grid grid-cols-2 gap-6 pb-12">
+<div class="glass-card">
+<div class="px-6 py-4 border-b border-[#333333]">
+<h3 class="font-label-caps text-sm uppercase tracking-widest text-zinc-400">Order History</h3>
+</div>
+<div class="divide-y divide-[#333333]">
+<div class="p-4 flex justify-between items-center hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-error-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-xl" data-icon="south_east">south_east</span>
+</div>
+<div>
+<p class="text-sm font-bold">SELL BTC/USDT</p>
+<p class="text-[10px] text-zinc-500 font-data-mono">2023.10.24 14:02:11</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-data-mono">-0.420 BTC</p>
+<p class="text-[10px] text-zinc-500">$27,042.11</p>
+</div>
+</div>
+<div class="p-4 flex justify-between items-center hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-[#39FF14]/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#39FF14] text-xl" data-icon="north_west">north_west</span>
+</div>
+<div>
+<p class="text-sm font-bold">BUY SOL/USDT</p>
+<p class="text-[10px] text-zinc-500 font-data-mono">2023.10.24 12:45:02</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-data-mono">+120.00 SOL</p>
+<p class="text-[10px] text-zinc-500">$10,244.50</p>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card">
+<div class="px-6 py-4 border-b border-[#333333]">
+<h3 class="font-label-caps text-sm uppercase tracking-widest text-zinc-400">System Logs</h3>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex gap-3 items-start">
+<span class="text-[10px] font-data-mono text-[#39FF14]">[14:22:10]</span>
+<span class="text-[10px] font-data-mono text-zinc-400 leading-relaxed"><span class="text-[#39FF14]">SUCCESS:</span> NODE CONNECTION RE-ESTABLISHED ON PORT 8080. LATENCY OPTIMIZED.</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="text-[10px] font-data-mono text-[#39FF14]">[14:15:05]</span>
+<span class="text-[10px] font-data-mono text-zinc-400 leading-relaxed"><span class="text-error">ALERT:</span> BTC PRICE VOLATILITY EXCEEDS 2% THRESHOLD. AUTO-STOP TRIGGERS ARMED.</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="text-[10px] font-data-mono text-[#39FF14]">[14:02:11]</span>
+<span class="text-[10px] font-data-mono text-zinc-400 leading-relaxed"><span class="text-[#39FF14]">EXECUTION:</span> MARKET SELL 0.420 BTC @ $64,385.12 FILLED COMPLETELY.</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="text-[10px] font-data-mono text-[#39FF14]">[13:58:44]</span>
+<span class="text-[10px] font-data-mono text-zinc-400 leading-relaxed"><span class="text-on-surface-variant">INFO:</span> SYNCING PORTFOLIO SNAPSHOT WITH EXTERNAL WALLET ADDR: 0x71...F4A2.</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual Trade FAB (Only on Home/Dashboard) -->
+<div class="fixed bottom-8 right-8 flex gap-4">
+<button class="bg-error-container text-white px-8 py-4 font-bold flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(147,0,10,0.3)]">
+<span class="material-symbols-outlined" data-icon="trending_down">trending_down</span>
+            SELL
+        </button>
+<button class="bg-[#39FF14] text-black px-8 py-4 font-bold flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(57,255,20,0.3)]">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+            BUY
+        </button>
+</div>
+</body></html>

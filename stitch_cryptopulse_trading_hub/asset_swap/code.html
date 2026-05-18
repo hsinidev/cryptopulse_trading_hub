@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "secondary": "#c8c6c5",
+                    "on-tertiary": "#690006",
+                    "background": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-bright": "#3a3939",
+                    "surface-dim": "#131313",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#053900",
+                    "on-secondary": "#303030",
+                    "surface-container": "#201f1f",
+                    "surface-variant": "#353534",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#410002",
+                    "primary-fixed-dim": "#2ae500",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353534",
+                    "on-secondary-container": "#b6b5b4",
+                    "on-background": "#e5e2e1",
+                    "surface": "#131313",
+                    "surface-tint": "#2ae500",
+                    "tertiary-fixed": "#ffdad6",
+                    "primary-fixed": "#79ff5b",
+                    "on-surface-variant": "#baccb0",
+                    "outline-variant": "#3c4b35",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary-container": "#c50015",
+                    "on-primary-fixed-variant": "#095300",
+                    "tertiary": "#fff8f7",
+                    "on-primary-fixed": "#022100",
+                    "tertiary-fixed-dim": "#ffb4ab",
+                    "inverse-primary": "#106e00",
+                    "on-primary-container": "#107100",
+                    "secondary-fixed": "#e4e2e1",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "primary-container": "#39ff14",
+                    "on-tertiary-fixed-variant": "#93000c",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-container": "#ffd3ce",
+                    "on-secondary-fixed-variant": "#474747",
+                    "secondary-container": "#474747",
+                    "error": "#ffb4ab",
+                    "on-error": "#690005",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-surface": "#e5e2e1",
+                    "outline": "#85967c",
+                    "primary": "#efffe3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "12px",
+                    "lg": "24px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "container-margin": "16px",
+                    "xl": "40px",
+                    "md": "16px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "display-lg": ["Space Grotesk"],
+                    "data-mono": ["Inter"],
+                    "headline-md": ["Space Grotesk"],
+                    "body-reg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-mono": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-reg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pulse-indicator {
+            box-shadow: 0 0 10px #39FF14;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-reg selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-14 bg-[#0D0D0D]/80 backdrop-blur-xl border-b border-[#333333]">
+<div class="flex items-center gap-2 text-xl font-black text-[#39FF14] font-['Space_Grotesk'] tracking-tighter uppercase">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="sensors">sensors</span>
+<span>CryptoPulse</span>
+<div class="w-2 h-2 rounded-full bg-[#39FF14] pulse-indicator ml-1"></div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#2C2C2C] transition-colors p-2 active:scale-95 duration-75">
+<span class="material-symbols-outlined text-on-surface" data-icon="settings">settings</span>
+</button>
+<button class="hover:bg-[#2C2C2C] transition-colors p-2 active:scale-95 duration-75">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 px-container-margin max-w-lg mx-auto">
+<!-- Header & Tabs -->
+<div class="mb-lg flex justify-between items-end">
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Swap Assets</h1>
+<p class="font-label-caps text-label-caps text-secondary mt-xs">Zero-latency settlement</p>
+</div>
+<div class="flex bg-surface-container-highest p-1 rounded-none border border-[#333333]">
+<button class="px-4 py-1 font-label-caps text-[10px] bg-primary-container text-on-primary-container">MARKET</button>
+<button class="px-4 py-1 font-label-caps text-[10px] text-secondary hover:text-on-surface transition-colors">LIMIT</button>
+</div>
+</div>
+<!-- Swap Interface Card -->
+<div class="space-y-unit">
+<!-- From Section -->
+<div class="bg-surface-container-low border border-[#333333] p-md">
+<div class="flex justify-between items-center mb-sm">
+<label class="font-label-caps text-label-caps text-secondary">FROM</label>
+<span class="font-label-caps text-[10px] text-secondary">BALANCE: 2.405 ETH</span>
+</div>
+<div class="flex justify-between items-center">
+<input class="bg-transparent border-none focus:ring-0 font-display-lg text-display-lg p-0 text-on-surface w-2/3" placeholder="0.00" type="text" value="1.50"/>
+<button class="flex items-center gap-2 bg-surface-container-highest px-3 py-2 border border-[#444444] hover:border-primary-container transition-all">
+<div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-white" data-icon="currency_exchange" style="font-variation-settings: 'FILL' 1;">currency_exchange</span>
+</div>
+<span class="font-data-mono text-data-mono">ETH</span>
+<span class="material-symbols-outlined text-secondary" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<div class="mt-sm flex justify-between items-center">
+<span class="font-label-caps text-[10px] text-[#333333] tracking-widest">$3,421.15</span>
+<div class="flex gap-2">
+<button class="px-2 py-0.5 border border-[#333333] font-label-caps text-[9px] hover:text-[#39FF14] hover:border-[#39FF14]">25%</button>
+<button class="px-2 py-0.5 border border-[#333333] font-label-caps text-[9px] hover:text-[#39FF14] hover:border-[#39FF14]">50%</button>
+<button class="px-2 py-0.5 border border-[#333333] font-label-caps text-[9px] text-[#39FF14] border-[#39FF14]">MAX</button>
+</div>
+</div>
+</div>
+<!-- Vertical Switcher -->
+<div class="flex justify-center -my-3 relative z-10">
+<button class="w-10 h-10 bg-[#0D0D0D] border border-[#39FF14] flex items-center justify-center drop-shadow-[0_0_8px_rgba(57,255,20,0.4)] active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="swap_vert">swap_vert</span>
+</button>
+</div>
+<!-- To Section -->
+<div class="bg-surface-container-low border border-[#333333] p-md">
+<div class="flex justify-between items-center mb-sm">
+<label class="font-label-caps text-label-caps text-secondary">TO (ESTIMATED)</label>
+<span class="font-label-caps text-[10px] text-secondary">BALANCE: 14,201 USDC</span>
+</div>
+<div class="flex justify-between items-center">
+<input class="bg-transparent border-none focus:ring-0 font-display-lg text-display-lg p-0 text-on-surface w-2/3" readonly="" type="text" value="5,131.72"/>
+<button class="flex items-center gap-2 bg-surface-container-highest px-3 py-2 border border-[#444444] hover:border-primary-container transition-all">
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-white" data-icon="monetization_on" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+</div>
+<span class="font-data-mono text-data-mono">USDC</span>
+<span class="material-symbols-outlined text-secondary" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<div class="mt-sm">
+<span class="font-label-caps text-[10px] text-[#333333] tracking-widest">$5,131.72</span>
+</div>
+</div>
+</div>
+<!-- Exchange Details -->
+<div class="mt-lg space-y-sm bg-[#0D0D0D] p-md border-l-2 border-[#39FF14]">
+<div class="flex justify-between font-label-caps text-[10px] text-secondary">
+<span>Exchange Rate</span>
+<span class="text-on-surface">1 ETH = 3,421.15 USDC</span>
+</div>
+<div class="flex justify-between font-label-caps text-[10px] text-secondary">
+<span>Network Fee</span>
+<span class="text-on-surface">0.0021 ETH ($7.18)</span>
+</div>
+<div class="flex justify-between font-label-caps text-[10px] text-secondary">
+<span>Price Impact</span>
+<span class="text-[#39FF14]">&lt; 0.01%</span>
+</div>
+<div class="flex justify-between font-label-caps text-[10px] text-secondary">
+<span>Slippage Tolerance</span>
+<div class="flex items-center gap-1 text-on-surface">
+<span>0.5%</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="edit">edit</span>
+</div>
+</div>
+</div>
+<!-- Execution Area -->
+<div class="mt-xl">
+<button class="w-full h-16 bg-primary-container text-on-primary font-headline-md text-headline-md uppercase tracking-widest active:scale-95 transition-all drop-shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                CONFIRM SWAP
+            </button>
+<div class="mt-md p-md border border-[#333333] bg-surface-container-low/50 backdrop-blur-sm">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+<p class="text-[11px] leading-relaxed text-secondary font-body-reg">
+                        Your transaction will revert if the price changes unfavorably by more than the slippage percentage. High volatility may increase network fees.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Market Visual Context (Visualizing 'Pulse') -->
+<div class="mt-xl grid grid-cols-2 gap-md">
+<div class="bg-surface-container p-sm border border-[#333333]">
+<p class="font-label-caps text-[9px] text-secondary mb-1">ETH TREND (1H)</p>
+<div class="h-10 flex items-end gap-1">
+<div class="bg-[#39FF14] w-full h-[40%]" style="opacity: 0.3"></div>
+<div class="bg-[#39FF14] w-full h-[60%]" style="opacity: 0.4"></div>
+<div class="bg-[#39FF14] w-full h-[55%]" style="opacity: 0.5"></div>
+<div class="bg-[#39FF14] w-full h-[80%]" style="opacity: 0.7"></div>
+<div class="bg-[#39FF14] w-full h-[95%]" style="opacity: 0.9"></div>
+<div class="bg-[#39FF14] w-full h-[85%]" style="opacity: 1"></div>
+</div>
+</div>
+<div class="bg-surface-container p-sm border border-[#333333]">
+<p class="font-label-caps text-[9px] text-secondary mb-1">GAS PRICE (GWEI)</p>
+<div class="flex items-center justify-center h-10">
+<span class="font-data-mono text-xl text-[#39FF14]">24.5</span>
+<span class="material-symbols-outlined text-[#39FF14] text-sm ml-1" data-icon="bolt">bolt</span>
+</div>
+</div>
+</div>
+<div class="mt-lg opacity-40">
+<img class="w-full h-32 object-cover grayscale brightness-50" data-alt="A macro photography shot of complex microchip circuitry illuminated by sharp neon green laser lines. The environment is dark and industrial, with shallow depth of field focusing on the intricate data pathways. The mood is high-tech and cold, perfectly matching a premium crypto trading interface aesthetic. Subtle glass reflections overlay parts of the image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPcOdt9NQBONUf7kMfbju5H1kdb8gkfkEL2xw2ORnbyWwkuw1q9_miAh15UOFnjQjfuaAdDRS3qYpFJ8Q_QMg5y902gdl5QOJNTv6p3FU8rCy5HVxFlccUcVn5tiGpJmDKaEyS-URe2GdYaG-psHG7yZdFcK9s1HIAcjApch_SSZE5R71wpZR6eGXu9EDUn9h2Ks-2t5bInEh9mLhIVhdDe0w2W6pIqSTHQirMt8NYcUYquRvMYghcWJ-ZlaNdcAs08Nz4WJLexsM"/>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#0D0D0D] border-t border-[#333333]">
+<!-- Markets -->
+<a class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150 group" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="show_chart">show_chart</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">MARKETS</span>
+</a>
+<!-- Portfolio -->
+<a class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">PORTFOLIO</span>
+</a>
+<!-- Trade (Active) -->
+<a class="flex flex-col items-center justify-center text-[#39FF14] drop-shadow-[0_0_8px_rgba(57,255,20,0.6)] active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="swap_horizontal_circle">swap_horizontal_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">TRADE</span>
+</a>
+<!-- Security -->
+<a class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="security">security</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">SECURITY</span>
+</a>
+</nav>
+</body></html>

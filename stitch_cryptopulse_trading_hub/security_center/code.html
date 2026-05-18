@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "secondary-fixed": "#e4e2e1",
+                      "on-surface-variant": "#baccb0",
+                      "on-tertiary": "#690006",
+                      "outline-variant": "#3c4b35",
+                      "surface-container": "#201f1f",
+                      "surface": "#131313",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "primary-fixed": "#79ff5b",
+                      "on-tertiary-container": "#c50015",
+                      "on-primary-fixed": "#022100",
+                      "tertiary": "#fff8f7",
+                      "on-surface": "#e5e2e1",
+                      "on-secondary-container": "#b6b5b4",
+                      "on-secondary-fixed-variant": "#474747",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#3a3939",
+                      "on-secondary": "#303030",
+                      "on-primary-container": "#107100",
+                      "inverse-primary": "#106e00",
+                      "error": "#ffb4ab",
+                      "on-primary-fixed-variant": "#095300",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "inverse-surface": "#e5e2e1",
+                      "primary-fixed-dim": "#2ae500",
+                      "primary-container": "#39ff14",
+                      "inverse-on-surface": "#313030",
+                      "tertiary-fixed": "#ffdad6",
+                      "tertiary-fixed-dim": "#ffb4ab",
+                      "on-primary": "#053900",
+                      "on-background": "#e5e2e1",
+                      "primary": "#efffe3",
+                      "background": "#131313",
+                      "outline": "#85967c",
+                      "surface-container-highest": "#353534",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-fixed-variant": "#93000c",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed": "#410002",
+                      "surface-tint": "#2ae500",
+                      "tertiary-container": "#ffd3ce",
+                      "surface-container-low": "#1c1b1b",
+                      "secondary": "#c8c6c5",
+                      "surface-dim": "#131313",
+                      "surface-variant": "#353534",
+                      "secondary-container": "#474747",
+                      "surface-container-high": "#2a2a2a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "40px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "unit": "4px",
+                      "lg": "24px",
+                      "gutter": "12px",
+                      "md": "16px",
+                      "container-margin": "16px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Space Grotesk"],
+                      "display-lg": ["Space Grotesk"],
+                      "body-reg": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "data-mono": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-reg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "data-mono": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-pulse {
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+        }
+        .glass-panel {
+            background: rgba(44, 44, 44, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+        }
+        .sharp-input {
+            background: #1c1b1b;
+            border: 1px solid #333333;
+            border-radius: 0;
+            transition: border-color 0.2s ease;
+        }
+        .sharp-input:focus {
+            border-color: #39FF14;
+            outline: none;
+            box-shadow: 0 0 5px rgba(57, 255, 20, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#0D0D0D] text-on-surface font-body-reg antialiased selection:bg-primary-container selection:text-on-primary-container">
+<nav class="flex justify-between items-center w-full px-6 sticky top-0 z-50 bg-[#0D0D0D]/95 backdrop-blur-md border-b border-[#333333] h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black italic text-[#39FF14] drop-shadow-[0_0_5px_#39FF14] font-['Space_Grotesk'] uppercase tracking-widest">NEON_TERMINAL</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-200" href="#">Terminal</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-200" href="#">Markets</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-[#39FF14] border-b-2 border-[#39FF14] pb-1" href="#">System</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container rounded border border-outline-variant">
+<span class="material-symbols-outlined text-[#39FF14] text-sm" style="font-variation-settings: 'FILL' 1;">sensors</span>
+<span class="text-[10px] font-['Space_Grotesk'] text-zinc-400">0.0428 BTC</span>
+</div>
+<span class="material-symbols-outlined text-zinc-400 hover:text-[#39FF14] cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-[#39FF14] cursor-pointer">account_balance_wallet</span>
+<div class="w-8 h-8 rounded-full border border-[#39FF14] overflow-hidden">
+<img alt="Professional Trader Profile" class="w-full h-full object-cover" data-alt="A high-contrast, professional portrait of a tech-focused individual in a dark setting, illuminated by the soft green glow of monitor light. The subject exhibits a focused, expert expression, consistent with an elite high-frequency trader. The background is minimal and deep charcoal, maintaining the cyber-tech and elite technical branding of the neon terminal system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnerYXT-jpTTCS13Lls5veB7Pa68jVZc2D9GL3w8yu7etM7Y7Kuv2zVTNStIuABQTljTqZIAznD15lIVvko6_VZFyhkoIkJz-C97GVy0Lhty1l8Wydh8CcVioKg6WeA8IOJaTRGaQs9K0K4P1V8b39Ep2j1f6ttjdYMJZKoK0wjtaWnyVJB394UGzGJfSHrZdSPCB3vqVnA7pNS6PAWUk_m8vNtYG6Jw1eN85cVjNDs1XCQHvfjq30STcsaoDzPKJLB0oO70hshlg"/>
+</div>
+</div>
+</nav>
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-16 h-screen w-64 border-r border-[#333333] bg-[#0D0D0D] hidden lg:flex">
+<div class="p-6 border-b border-[#333333]">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-2 h-2 rounded-full bg-[#39FF14] animate-pulse neon-pulse"></div>
+<span class="text-lg font-bold text-[#39FF14] font-headline-md">OPERATOR_01</span>
+</div>
+<p class="text-[10px] text-zinc-500 font-label-caps uppercase tracking-tighter">Verified Node • Tier 4 Security</p>
+</div>
+<nav class="flex-1 py-4">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150 font-['Space_Grotesk'] font-medium antialiased" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span> Terminal
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150 font-['Space_Grotesk'] font-medium antialiased" href="#">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span> Markets
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150 font-['Space_Grotesk'] font-medium antialiased" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span> Orders
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150 font-['Space_Grotesk'] font-medium antialiased" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span> Portfolio
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#39FF14]/10 text-[#39FF14] border-l-4 border-[#39FF14] shadow-[inset_0_0_15px_rgba(57,255,20,0.1)] font-['Space_Grotesk'] font-medium antialiased" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> System
+            </a>
+</nav>
+<div class="p-4 border-t border-[#333333]">
+<button class="w-full py-3 bg-[#39FF14] text-black font-bold text-xs tracking-widest hover:brightness-110 transition-all font-['Space_Grotesk'] uppercase">DEPOSIT</button>
+</div>
+</aside>
+<main class="lg:ml-64 p-6 lg:p-10 min-h-[calc(100vh-64px)]">
+<header class="mb-10">
+<h1 class="font-display-lg text-display-lg text-glow mb-2 uppercase tracking-tight">Security_Center</h1>
+<p class="text-zinc-500 font-label-caps">Advanced node protection and cryptographic access management</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10">
+<div class="md:col-span-8 space-y-6">
+<div class="glass-panel p-6">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="security">security</span>
+<h3 class="font-headline-md text-headline-md uppercase tracking-tight">Multi-Factor_Authentication</h3>
+</div>
+<span class="px-2 py-1 border border-[#39FF14] text-[#39FF14] text-[10px] font-label-caps">STATUS: ACTIVE</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low border border-[#333333] hover:border-[#39FF14] transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl group-hover:text-[#39FF14] transition-colors" data-icon="stay_current_portrait">stay_current_portrait</span>
+<span class="material-symbols-outlined text-[#39FF14]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h4 class="font-bold text-sm mb-1 uppercase tracking-wider">Authenticator App</h4>
+<p class="text-xs text-zinc-500">Google Authenticator, Authy, or 2FAS node.</p>
+</div>
+<div class="p-4 bg-surface-container-low border border-[#333333] hover:border-[#39FF14] transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl group-hover:text-[#39FF14] transition-colors" data-icon="key">key</span>
+<button class="text-[10px] font-label-caps text-zinc-500 group-hover:text-white">CONFIGURE</button>
+</div>
+<h4 class="font-bold text-sm mb-1 uppercase tracking-wider">Hardware Key</h4>
+<p class="text-xs text-zinc-500">Yubikey or FIDO2 compliant hardware modules.</p>
+</div>
+</div>
+</div>
+<div class="glass-panel p-6">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="api">api</span>
+<h3 class="font-headline-md text-headline-md uppercase tracking-tight">API_Key_Management</h3>
+</div>
+<button class="bg-[#2C2C2C] text-on-surface px-4 py-1 text-xs font-label-caps border border-[#333333] hover:border-[#39FF14] transition-all">GENERATE_NEW</button>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-lowest border-l-2 border-[#39FF14] flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-mono text-sm text-[#39FF14]">MAIN_TRADING_BOT_ALPHA</span>
+<span class="text-[10px] bg-surface-variant px-1 text-zinc-400">v.1.0.4</span>
+</div>
+<div class="flex gap-3">
+<span class="text-[10px] text-zinc-500 font-label-caps uppercase">Permissions: Read, Trade</span>
+<span class="text-[10px] text-zinc-500 font-label-caps uppercase">Created: 2023.11.12</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-500 hover:text-white"><span class="material-symbols-outlined text-sm">edit</span></button>
+<button class="text-zinc-500 hover:text-error"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest border-l-2 border-zinc-700 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-mono text-sm text-zinc-300">PORTFOLIO_TRACKER_EXTERNAL</span>
+</div>
+<div class="flex gap-3">
+<span class="text-[10px] text-zinc-500 font-label-caps uppercase">Permissions: Read Only</span>
+<span class="text-[10px] text-zinc-500 font-label-caps uppercase">Created: 2023.09.04</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-500 hover:text-white"><span class="material-symbols-outlined text-sm">edit</span></button>
+<button class="text-zinc-500 hover:text-error"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 space-y-6">
+<div class="glass-panel p-6">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="fingerprint">fingerprint</span>
+<h3 class="font-headline-md text-headline-md uppercase tracking-tight">Biometrics</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-sm font-bold uppercase tracking-wider">Touch ID / Face ID</h4>
+<p class="text-xs text-zinc-500">Enable local cryptographic unlock</p>
+</div>
+<div class="w-12 h-6 bg-[#39FF14] relative flex items-center px-1">
+<div class="w-4 h-4 bg-black ml-auto"></div>
+</div>
+</div>
+<div class="flex items-center justify-between opacity-50">
+<div>
+<h4 class="text-sm font-bold uppercase tracking-wider">Retina Scan</h4>
+<p class="text-xs text-zinc-500">Available for Enterprise Nodes</p>
+</div>
+<div class="w-12 h-6 bg-[#2C2C2C] relative flex items-center px-1">
+<div class="w-4 h-4 bg-zinc-600"></div>
+</div>
+</div>
+<img alt="Biometric Security Visualization" class="w-full h-32 object-cover border border-[#333333]" data-alt="A macro, abstract digital visualization of a glowing green fingerprint pattern composed of thousands of tiny, precise code fragments and digital data points. The lighting is low and focused, with sharp neon green highlights against a deep void of matte black. The aesthetic is purely technical and futuristic, symbolizing the convergence of human identity and high-level cryptographic security." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpLZYi7mp2lLwVt20Rp5kcNuR4uINi6n3lyrLXoBNwnNymzOZQVy1si4D_wdsqrMO8AersVTOHs1RKDLoqABG_XfBUQX94ki98GFUxsfAv-G1SaVB6cGj_1Zykn8s9iVPtkXg-F1StXyBnWvfwaoLY7WEgaMg5xTJEhRKWDhqiThkJEJYhODs-BX_7L5sHk0m9D4NDh-L7RcwLlBAhiALV9Wjzc6xpkLZBPRaUvR8MqTTX0SwHEMuEbmCQEztXYCv7O5Z0MVZbHA0"/>
+</div>
+</div>
+<div class="p-6 border border-error-container/30 bg-error-container/5">
+<h3 class="text-error text-sm font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        Critical Security Note
+                    </h3>
+<p class="text-xs text-zinc-400 mb-4 leading-relaxed">
+                        Session termination is immediate. If you detect unauthorized activity, use the global terminal lock sequence.
+                    </p>
+<button class="w-full border border-error text-error text-[10px] font-bold py-2 font-label-caps hover:bg-error hover:text-white transition-colors">INITIATE EMERGENCY LOCK</button>
+</div>
+</div>
+</div>
+<div class="glass-panel mb-10 overflow-hidden">
+<div class="p-6 border-b border-[#333333] flex justify-between items-center bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md uppercase tracking-tight">Active_Sessions</h3>
+<span class="text-xs font-mono text-zinc-500">TOTAL: 03 SESSIONS</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest border-b border-[#333333]">
+<th class="p-4 text-[10px] font-label-caps text-zinc-500 uppercase">Device / Browser</th>
+<th class="p-4 text-[10px] font-label-caps text-zinc-500 uppercase">IP Address</th>
+<th class="p-4 text-[10px] font-label-caps text-zinc-500 uppercase">Location</th>
+<th class="p-4 text-[10px] font-label-caps text-zinc-500 uppercase">Activity</th>
+<th class="p-4 text-[10px] font-label-caps text-zinc-500 uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#333333]">
+<tr class="hover:bg-[#2C2C2C]/50 transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-zinc-400" data-icon="laptop_mac">laptop_mac</span>
+<div>
+<div class="text-sm font-bold uppercase tracking-tighter">Chrome on macOS</div>
+<div class="text-[10px] text-zinc-500">Current Session</div>
+</div>
+</div>
+</td>
+<td class="p-4 font-mono text-xs">192.168.1.104</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[10px] text-error" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="text-xs uppercase tracking-wider">Tokyo, JP</span>
+</div>
+</td>
+<td class="p-4 text-[10px] text-zinc-400">ACTIVE NOW</td>
+<td class="p-4 text-right">
+<span class="text-[10px] text-zinc-600 font-label-caps">IMMUTABLE</span>
+</td>
+</tr>
+<tr class="hover:bg-[#2C2C2C]/50 transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-zinc-400" data-icon="smartphone">smartphone</span>
+<div>
+<div class="text-sm font-bold uppercase tracking-tighter">iPhone 15 Pro</div>
+<div class="text-[10px] text-zinc-500">Neon_Mobile_App</div>
+</div>
+</div>
+</td>
+<td class="p-4 font-mono text-xs">45.22.112.89</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[10px] text-zinc-500" data-icon="location_on">location_on</span>
+<span class="text-xs uppercase tracking-wider">Tokyo, JP</span>
+</div>
+</td>
+<td class="p-4 text-[10px] text-zinc-400">2 HOURS AGO</td>
+<td class="p-4 text-right">
+<button class="text-error text-[10px] font-bold font-label-caps border border-error/30 px-3 py-1 hover:bg-error/10">TERMINATE</button>
+</td>
+</tr>
+<tr class="hover:bg-[#2C2C2C]/50 transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-zinc-400" data-icon="desktop_windows">desktop_windows</span>
+<div>
+<div class="text-sm font-bold uppercase tracking-tighter">Firefox on Windows</div>
+<div class="text-[10px] text-zinc-500">Desktop Client</div>
+</div>
+</div>
+</td>
+<td class="p-4 font-mono text-xs">102.14.90.12</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[10px] text-zinc-500" data-icon="location_on">location_on</span>
+<span class="text-xs uppercase tracking-wider">Osaka, JP</span>
+</div>
+</td>
+<td class="p-4 text-[10px] text-zinc-400">14 DAYS AGO</td>
+<td class="p-4 text-right">
+<button class="text-error text-[10px] font-bold font-label-caps border border-error/30 px-3 py-1 hover:bg-error/10">TERMINATE</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="border-t-2 border-error-container mt-12 pt-10 mb-20 text-center max-w-2xl mx-auto">
+<h2 class="text-error text-2xl font-black italic uppercase tracking-tighter mb-4 font-['Space_Grotesk']">DEACTIVATE_ACCOUNT_PROTOCOL</h2>
+<p class="text-zinc-500 text-sm mb-8">
+                Once initiated, all assets will be locked for a 7-day cooling period. Cryptographic keys will be burned. This action is permanent and cannot be reversed by system operators.
+            </p>
+<button class="bg-[#131313] text-error border border-error px-12 py-4 font-black uppercase tracking-[0.2em] text-xs hover:bg-error hover:text-white transition-all shadow-[0_0_15px_rgba(147,0,10,0.2)]">
+                EXECUTE_PERMANENT_WIPE
+            </button>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 w-full bg-[#0D0D0D] border-t border-[#333333] lg:hidden h-16 flex items-center justify-around z-50">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="grid_view">grid_view</span>
+<span class="material-symbols-outlined text-zinc-500" data-icon="show_chart">show_chart</span>
+<div class="w-12 h-12 bg-[#39FF14] flex items-center justify-center -translate-y-4 shadow-[0_0_15px_rgba(57,255,20,0.4)]">
+<span class="material-symbols-outlined text-black font-bold" data-icon="add">add</span>
+</div>
+<span class="material-symbols-outlined text-zinc-500" data-icon="account_balance">account_balance</span>
+<span class="material-symbols-outlined text-zinc-500" data-icon="settings">settings</span>
+</div>
+</body></html>

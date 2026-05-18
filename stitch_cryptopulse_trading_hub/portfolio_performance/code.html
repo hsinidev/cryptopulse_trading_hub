@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0D0D0D;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(44, 44, 44, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+        }
+        .neon-glow {
+            filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));
+        }
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1b",
+                      "secondary": "#c8c6c5",
+                      "on-tertiary": "#690006",
+                      "background": "#131313",
+                      "surface-container-high": "#2a2a2a",
+                      "surface-bright": "#3a3939",
+                      "surface-dim": "#131313",
+                      "on-error-container": "#ffdad6",
+                      "on-primary": "#053900",
+                      "on-secondary": "#303030",
+                      "surface-container": "#201f1f",
+                      "surface-variant": "#353534",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed": "#410002",
+                      "primary-fixed-dim": "#2ae500",
+                      "surface-container-lowest": "#0e0e0e",
+                      "surface-container-highest": "#353534",
+                      "on-secondary-container": "#b6b5b4",
+                      "on-background": "#e5e2e1",
+                      "surface": "#131313",
+                      "surface-tint": "#2ae500",
+                      "tertiary-fixed": "#ffdad6",
+                      "primary-fixed": "#79ff5b",
+                      "on-surface-variant": "#baccb0",
+                      "outline-variant": "#3c4b35",
+                      "inverse-on-surface": "#313030",
+                      "on-tertiary-container": "#c50015",
+                      "on-primary-fixed-variant": "#095300",
+                      "tertiary": "#fff8f7",
+                      "on-primary-fixed": "#022100",
+                      "tertiary-fixed-dim": "#ffb4ab",
+                      "inverse-primary": "#106e00",
+                      "on-primary-container": "#107100",
+                      "secondary-fixed": "#e4e2e1",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "primary-container": "#39ff14",
+                      "on-tertiary-fixed-variant": "#93000c",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-container": "#ffd3ce",
+                      "on-secondary-fixed-variant": "#474747",
+                      "secondary-container": "#474747",
+                      "error": "#ffb4ab",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-surface": "#e5e2e1",
+                      "outline": "#85967c",
+                      "primary": "#efffe3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "12px",
+                      "lg": "24px",
+                      "unit": "4px",
+                      "sm": "8px",
+                      "container-margin": "16px",
+                      "xl": "40px",
+                      "md": "16px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "display-lg": ["Space Grotesk"],
+                      "data-mono": ["Inter"],
+                      "headline-md": ["Space Grotesk"],
+                      "body-reg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "data-mono": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-reg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-14 bg-[#0D0D0D]/80 backdrop-blur-xl border-b border-[#333333]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="sensors">sensors</span>
+<h1 class="text-xl font-black text-[#39FF14] flex items-center gap-2 font-['Space_Grotesk'] tracking-tighter uppercase font-bold">
+                CryptoPulse
+                <span class="pulse-dot w-2 h-2 rounded-full bg-[#39FF14] shadow-[0_0_8px_#39FF14]"></span>
+</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#2C2C2C] hover:bg-[#2C2C2C] transition-colors p-2 rounded-full" data-icon="search">search</span>
+<span class="material-symbols-outlined text-[#2C2C2C] hover:bg-[#2C2C2C] transition-colors p-2 rounded-full" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-margin max-w-7xl mx-auto space-y-6">
+<!-- Portfolio Summary Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Main Balance Card -->
+<div class="md:col-span-8 glass-card p-6 rounded-lg flex flex-col justify-between min-h-[200px]">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">TOTAL BALANCE</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-lg text-display-lg text-on-surface">$142,850.42</span>
+<span class="text-[#39FF14] font-data-mono text-sm neon-glow">+12.4%</span>
+</div>
+</div>
+<div class="flex gap-8 mt-6">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-secondary uppercase">24H PNL</span>
+<span class="font-data-mono text-[#39FF14] text-lg">+$4,210.15</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-secondary uppercase">7D CHANGE</span>
+<span class="font-data-mono text-[#39FF14] text-lg">+$18,902.00</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Card -->
+<div class="md:col-span-4 grid grid-rows-2 gap-4">
+<div class="bg-[#39FF14] p-6 rounded-lg flex flex-col justify-center items-center group cursor-pointer active:scale-95 duration-75">
+<span class="material-symbols-outlined text-black text-3xl mb-1" data-icon="add_circle">add_circle</span>
+<span class="font-label-caps text-black font-black">DEPOSIT ASSETS</span>
+</div>
+<div class="glass-card p-6 rounded-lg flex flex-col justify-center items-center hover:bg-[#2C2C2C] transition-colors cursor-pointer active:scale-95 duration-75">
+<span class="material-symbols-outlined text-on-surface text-3xl mb-1" data-icon="ios_share">ios_share</span>
+<span class="font-label-caps text-on-surface">WITHDRAW</span>
+</div>
+</div>
+</div>
+<!-- High-Readability Candlestick Chart Area -->
+<section class="glass-card rounded-lg overflow-hidden flex flex-col">
+<div class="p-4 border-b border-[#333333] flex justify-between items-center">
+<div class="flex gap-4">
+<button class="bg-[#2C2C2C] text-[#39FF14] px-4 py-1 text-xs font-bold font-['Space_Grotesk'] rounded">1H</button>
+<button class="text-secondary px-4 py-1 text-xs font-bold font-['Space_Grotesk'] hover:text-white transition-colors">4H</button>
+<button class="text-secondary px-4 py-1 text-xs font-bold font-['Space_Grotesk'] hover:text-white transition-colors">1D</button>
+<button class="text-secondary px-4 py-1 text-xs font-bold font-['Space_Grotesk'] hover:text-white transition-colors">1W</button>
+</div>
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+<span class="font-label-caps text-[10px]">TECHNICAL OVERLAY</span>
+</div>
+</div>
+<div class="relative h-[400px] w-full bg-[#0D0D0D]">
+<img class="w-full h-full object-cover opacity-60 mix-blend-screen" data-alt="A professional high-frequency trading candlestick chart display with glowing neon green and sharp white price action indicators. The interface is set against a deep matte black background with a precise grid overlay and minimalist UI elements. The mood is technical and analytical, capturing the essence of elite crypto trading. Lighting is low-key, emphasizing the intensity of the data visualization." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_RK6QwkiqgRquGrr4h1qkHkutFgGbt165TsDQQ4eKzeA903CpHWWb8Tt0IA26UVfDXhCzOoQdFLg7dSpdzlUGUvh2DzbzVjMbLPtyjzBILCQ25gXJcYGJrfPwieXjha1o_YMfqRMA0kzVKDvGvMFnBjLbF2igsrOtcKziEMwqCdgEi5-Yn_iOWqXkpx-Xz5Csj7fiCKz3GMRpNBD2V4KZRyrygWKpbcOzETuQRXACHAG6c8NSxxZfEIuhSqJ4FDjQYZwMcbosV2s"/>
+<!-- Chart Data Labels Overlay -->
+<div class="absolute top-4 left-4 p-3 bg-black/60 backdrop-blur-md border border-[#333333] rounded">
+<div class="flex flex-col">
+<span class="text-[10px] text-secondary font-label-caps">LAST PRICE</span>
+<span class="text-xl font-data-mono text-[#39FF14]">$68,431.20</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Asset Allocation & Breakdown -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Breakdown List -->
+<div class="lg:col-span-2 space-y-3">
+<h2 class="font-headline-md text-headline-md text-on-surface">Asset Breakdown</h2>
+<div class="glass-card rounded-lg divide-y divide-[#333333]">
+<!-- BTC -->
+<div class="p-4 flex items-center justify-between hover:bg-[#2C2C2C] transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#2C2C2C] flex items-center justify-center border border-[#333333]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="currency_bitcoin">currency_bitcoin</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">BITCOIN</h3>
+<span class="text-xs text-secondary font-data-mono">1.42 BTC</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-on-surface font-data-mono">$97,172.30</p>
+<p class="text-[10px] text-[#39FF14] font-label-caps">68% ALLOCATION</p>
+</div>
+</div>
+<!-- ETH -->
+<div class="p-4 flex items-center justify-between hover:bg-[#2C2C2C] transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#2C2C2C] flex items-center justify-center border border-[#333333]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="eth">eco</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">ETHEREUM</h3>
+<span class="text-xs text-secondary font-data-mono">12.5 ETH</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-on-surface font-data-mono">$32,678.12</p>
+<p class="text-[10px] text-[#39FF14] font-label-caps">23% ALLOCATION</p>
+</div>
+</div>
+<!-- SOL -->
+<div class="p-4 flex items-center justify-between hover:bg-[#2C2C2C] transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#2C2C2C] flex items-center justify-center border border-[#333333]">
+<span class="material-symbols-outlined text-[#39FF14]" data-icon="token">token</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">SOLANA</h3>
+<span class="text-xs text-secondary font-data-mono">85.0 SOL</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-on-surface font-data-mono">$12,999.98</p>
+<p class="text-[10px] text-[#39FF14] font-label-caps">9% ALLOCATION</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Allocation Visualizer -->
+<div class="lg:col-span-1 space-y-3">
+<h2 class="font-headline-md text-headline-md text-on-surface">Strategy</h2>
+<div class="glass-card p-6 rounded-lg h-full">
+<div class="relative flex justify-center items-center py-8">
+<div class="w-32 h-32 rounded-full border-8 border-[#333333] border-t-[#39FF14] border-r-[#39FF14] border-l-[#39FF14] rotate-45"></div>
+<div class="absolute flex flex-col items-center">
+<span class="text-2xl font-black text-[#39FF14] neon-glow">HIGH</span>
+<span class="text-[10px] text-secondary font-label-caps">RISK SCORE</span>
+</div>
+</div>
+<div class="space-y-4 mt-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-secondary font-label-caps">DIVERSIFICATION</span>
+<span class="text-xs text-on-surface font-bold">MODERATE</span>
+</div>
+<div class="w-full h-1 bg-[#333333]">
+<div class="w-2/3 h-full bg-[#39FF14]"></div>
+</div>
+<p class="text-xs text-secondary leading-relaxed pt-2">
+                            Portfolio is currently optimized for aggressive market capture. High weighting in blue-chip digital assets.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#0D0D0D] border-t border-[#333333]">
+<div class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">MARKETS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#39FF14] drop-shadow-[0_0_8px_rgba(57,255,20,0.6)] active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">PORTFOLIO</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="swap_horizontal_circle">swap_horizontal_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">TRADE</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2C2C2C] hover:text-white transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">SECURITY</span>
+</div>
+</nav>
+</body></html>

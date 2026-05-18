@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .neon-glow-green { text-shadow: 0 0 10px rgba(57, 255, 20, 0.5); }
+        .active-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-surface-variant": "#baccb0",
+                        "on-tertiary": "#690006",
+                        "outline-variant": "#3c4b35",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#79ff5b",
+                        "on-tertiary-container": "#c50015",
+                        "on-primary-fixed": "#022100",
+                        "tertiary": "#fff8f7",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#303030",
+                        "on-primary-container": "#107100",
+                        "inverse-primary": "#106e00",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#095300",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#2ae500",
+                        "primary-container": "#39ff14",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb4ab",
+                        "on-primary": "#053900",
+                        "on-background": "#e5e2e1",
+                        "primary": "#efffe3",
+                        "background": "#131313",
+                        "outline": "#85967c",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#93000c",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#410002",
+                        "surface-tint": "#2ae500",
+                        "tertiary-container": "#ffd3ce",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353534",
+                        "secondary-container": "#474747",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "12px",
+                        "md": "16px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-reg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "data-mono": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-reg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "data-mono": ["18px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-[#0D0D0D] text-on-background font-body-reg min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-[#0D0D0D]/95 backdrop-blur-md flex justify-between items-center w-full px-6 sticky top-0 z-50 h-16 border-b border-[#333333]">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black italic text-[#39FF14] drop-shadow-[0_0_5px_#39FF14]">NEON_TERMINAL</span>
+<div class="flex items-center gap-2 ml-4 px-3 py-1 bg-surface-container-low border border-[#333333]">
+<div class="w-2 h-2 rounded-full bg-[#39FF14] active-pulse shadow-[0_0_8px_#39FF14]"></div>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-[#39FF14]">NODE_ACTIVE</span>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-200" href="#">Terminal</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-[#39FF14] border-b-2 border-[#39FF14] pb-1" href="#">Community</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-200" href="#">Markets</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-2 font-data-mono text-sm text-[#39FF14]">
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span>
+<span>0.0428 BTC</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-zinc-400 hover:text-[#39FF14] transition-colors">sensors</button>
+<button class="material-symbols-outlined text-zinc-400 hover:text-[#39FF14] transition-colors">notifications</button>
+<div class="w-8 h-8 border border-[#39FF14]/50 bg-surface-container overflow-hidden">
+<img alt="Professional Trader Profile" data-alt="A close-up portrait of a high-tech professional trader avatar, featuring a sleek visor with neon data reflections across the lens. The lighting is low-key with intense green highlights against a deep matte black background, embodying a futuristic cyber-tech aesthetic with sharp focus and cinematic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfR0eA-ZgT_8A9ywN_zxWCxq2jw29fwhMwi-IyKEuha960Zp7DrtSAWlMLyvL6E2YBSeuXmX0f84QeZVcj98iDTqw_5Pvr7Fw6ZQabLq5faYFey3SNtQzqjxpaXavoCq57iv2_XuQcv_9R4LIMl38pgfEmpW7GzzL036SzO3h6-cWjpBIi49cSrVNiNE6y4layk2FxSRsG8sFWgwVpNsYs3W3VvrMCHhPdFCwq2IXmmgPLUfa_glz0eC3gGxKK5u2CsfKUeIzCrQ4"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex min-h-[calc(100vh-64px)]">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-16 h-screen w-64 border-r border-[#333333] bg-[#0D0D0D] hidden md:flex">
+<div class="p-6 border-b border-[#333333]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#39FF14]/10 border border-[#39FF14] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#39FF14]">token</span>
+</div>
+<div>
+<div class="text-lg font-bold text-[#39FF14] font-headline-md">OPERATOR_01</div>
+<div class="text-[10px] text-zinc-500 uppercase tracking-tighter">Verified Node</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 py-4">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Space_Grotesk'] font-medium antialiased uppercase text-sm">Terminal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span class="font-['Space_Grotesk'] font-medium antialiased uppercase text-sm">Markets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#39FF14]/10 text-[#39FF14] border-l-4 border-[#39FF14] shadow-[inset_0_0_15px_rgba(57,255,20,0.1)]" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span class="font-['Space_Grotesk'] font-medium antialiased uppercase text-sm">Community</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Space_Grotesk'] font-medium antialiased uppercase text-sm">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:bg-[#2C2C2C] hover:text-white transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-['Space_Grotesk'] font-medium antialiased uppercase text-sm">Portfolio</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full py-4 bg-[#39FF14] text-[#0D0D0D] font-bold uppercase tracking-widest text-xs hover:shadow-[0_0_20px_#39FF14] transition-all duration-300">
+                    DEPOSIT
+                </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 p-6 bg-[#0D0D0D]">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Community Main -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Sentiment Polls Bento Section -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- BTC Poll -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-headline-md text-sm text-[#39FF14]">BTC_SENTIMENT</span>
+<span class="material-symbols-outlined text-xs text-zinc-500">trending_up</span>
+</div>
+<div class="flex h-1.5 w-full bg-[#333333]">
+<div class="bg-[#39FF14] w-[72%] shadow-[0_0_10px_#39FF14]"></div>
+<div class="bg-error w-[28%]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-data-mono uppercase">
+<span class="text-[#39FF14]">72% BULLISH</span>
+<span class="text-error">28% BEARISH</span>
+</div>
+</div>
+<!-- ETH Poll -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-headline-md text-sm text-[#39FF14]">ETH_SENTIMENT</span>
+<span class="material-symbols-outlined text-xs text-zinc-500">trending_flat</span>
+</div>
+<div class="flex h-1.5 w-full bg-[#333333]">
+<div class="bg-[#39FF14] w-[45%] shadow-[0_0_10px_#39FF14]"></div>
+<div class="bg-error w-[55%]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-data-mono uppercase">
+<span class="text-[#39FF14]">45% BULLISH</span>
+<span class="text-error">55% BEARISH</span>
+</div>
+</div>
+<!-- SOL Poll -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-headline-md text-sm text-[#39FF14]">SOL_SENTIMENT</span>
+<span class="material-symbols-outlined text-xs text-zinc-500">trending_up</span>
+</div>
+<div class="flex h-1.5 w-full bg-[#333333]">
+<div class="bg-[#39FF14] w-[88%] shadow-[0_0_10px_#39FF14]"></div>
+<div class="bg-error w-[12%]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-data-mono uppercase">
+<span class="text-[#39FF14]">88% BULLISH</span>
+<span class="text-error">12% BEARISH</span>
+</div>
+</div>
+</div>
+<!-- Create Post Section -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-4 relative">
+<div class="absolute top-0 right-4 transform -translate-y-1/2 bg-[#0D0D0D] border border-[#333333] px-2 text-[10px] font-data-mono text-[#39FF14]">NEW_BROADCAST</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 bg-surface-container border border-[#333333] flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-zinc-500">person</span>
+</div>
+<div class="flex-1 flex flex-col gap-4">
+<textarea class="w-full bg-[#0D0D0D] border border-[#333333] focus:border-[#39FF14] focus:ring-0 text-on-surface p-3 font-body-reg placeholder-zinc-700 resize-none min-h-[100px]" placeholder="Broadcast your market insight..."></textarea>
+<div class="flex justify-between items-center">
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-zinc-500 hover:text-[#39FF14]">image</button>
+<button class="material-symbols-outlined text-zinc-500 hover:text-[#39FF14]">bar_chart</button>
+<button class="material-symbols-outlined text-zinc-500 hover:text-[#39FF14]">alternate_email</button>
+</div>
+<button class="px-6 py-2 bg-[#39FF14] text-[#0D0D0D] font-bold text-xs uppercase hover:shadow-[0_0_15px_#39FF14] transition-all">PUBLISH</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Asset Tabs -->
+<div class="flex border-b border-[#333333] gap-8 overflow-x-auto hide-scrollbar">
+<button class="pb-4 text-xs font-headline-md uppercase text-[#39FF14] border-b-2 border-[#39FF14] px-2 whitespace-nowrap">BTC_FLOW</button>
+<button class="pb-4 text-xs font-headline-md uppercase text-zinc-500 hover:text-zinc-300 px-2 whitespace-nowrap">ETH_FLOW</button>
+<button class="pb-4 text-xs font-headline-md uppercase text-zinc-500 hover:text-zinc-300 px-2 whitespace-nowrap">SOL_FLOW</button>
+<button class="pb-4 text-xs font-headline-md uppercase text-zinc-500 hover:text-zinc-300 px-2 whitespace-nowrap">MACRO</button>
+</div>
+<!-- Feed -->
+<div class="flex flex-col gap-4">
+<!-- Post 1 -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-6 group hover:border-[#39FF14]/30 transition-colors">
+<div class="flex gap-4">
+<div class="flex flex-col items-center gap-1 flex-shrink-0">
+<button class="material-symbols-outlined text-zinc-500 hover:text-[#39FF14]">arrow_drop_up</button>
+<span class="font-data-mono text-xs text-zinc-300">1.2K</span>
+<button class="material-symbols-outlined text-zinc-500 hover:text-error">arrow_drop_down</button>
+</div>
+<div class="flex-1 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-[#39FF14] font-bold text-sm">WHALE_WATCHER_7</span>
+<span class="bg-[#39FF14]/10 text-[#39FF14] text-[9px] px-1 border border-[#39FF14]/30">ALPHA_USER</span>
+<span class="text-zinc-600 text-xs font-data-mono">• 14M AGO</span>
+</div>
+<span class="border border-[#39FF14] text-[#39FF14] text-[10px] px-2 py-0.5 font-bold uppercase">BULLISH</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Massive institutional flow detected on the 4H timeframe. Support at $62k is holding stronger than expected. Expecting a volatility squeeze within the next 24 hours. Eyeing $68k target. 📈</p>
+<div class="mt-2 h-48 w-full bg-[#0D0D0D] border border-[#333333] overflow-hidden">
+<img alt="Market Analysis Chart" class="w-full h-full object-cover opacity-80" data-alt="A highly detailed technical analysis candlestick chart for Bitcoin on a deep matte black background. The chart features bright neon green bullish candles and sharp alert red bearish candles, with intricate glowing trend lines and Fibonacci retracement levels overlaid in a cyan glassmorphic style. The visual mood is technical, high-precision, and reminiscent of a high-stakes trading terminal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqey2v7r-elG8tSt3Yh_S9uAKcvPh2Cn4sSkDVt_VE4u6U4E4Wp12yVZPFDIkJ72P6_YE5q_WRWYx6vvP8KkavAgh37N9q09ZEO9GEOIov5KFN8vQKZk2bpSlTrOfcdwpHKKMJM0pMP6DsKaa9Koik2bTWX2FIXJ-tM80NdzuagD8FnztNXCUVQr1n8cVL6E8aL-dIP9C8nDCfRzaCEj2iCjQSVNwOvUt7oAel9kj1v7I-z8khPRyck_c_I7-ZhbnSyZlNcW0ndfg"/>
+</div>
+<div class="flex gap-6 mt-2">
+<button class="flex items-center gap-2 text-zinc-500 hover:text-zinc-300 text-xs uppercase font-data-mono">
+<span class="material-symbols-outlined text-sm">chat_bubble</span> 42 REPLIES
+                                        </button>
+<button class="flex items-center gap-2 text-zinc-500 hover:text-zinc-300 text-xs uppercase font-data-mono">
+<span class="material-symbols-outlined text-sm">share</span> EXPORT
+                                        </button>
+</div>
+<!-- Threaded Reply -->
+<div class="ml-4 pl-4 border-l border-[#333333] mt-4 flex flex-col gap-4">
+<div class="flex gap-3">
+<div class="w-8 h-8 bg-surface-container border border-[#333333] flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-zinc-500">person</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-zinc-300 font-bold text-xs uppercase">BLOCK_RUNNER</span>
+<span class="text-zinc-600 text-[10px] font-data-mono">• 8M AGO</span>
+</div>
+<p class="text-zinc-400 text-sm">Agreed, the order book depth on the bid side is thickening up. This is a classic accumulation phase before the leg up.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-6 group hover:border-error/30 transition-colors">
+<div class="flex gap-4">
+<div class="flex flex-col items-center gap-1 flex-shrink-0">
+<button class="material-symbols-outlined text-zinc-500 hover:text-[#39FF14]">arrow_drop_up</button>
+<span class="font-data-mono text-xs text-zinc-300">842</span>
+<button class="material-symbols-outlined text-zinc-500 hover:text-error">arrow_drop_down</button>
+</div>
+<div class="flex-1 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-[#39FF14] font-bold text-sm">VOID_TRADER</span>
+<span class="bg-surface-container-highest text-zinc-400 text-[9px] px-1 border border-[#333333]">NODAL_MEMBER</span>
+<span class="text-zinc-600 text-xs font-data-mono">• 2H AGO</span>
+</div>
+<span class="border border-error text-error text-[10px] px-2 py-0.5 font-bold uppercase">BEARISH</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Regulatory headwinds increasing. Open interest is too high, expecting a long liquidation cascade before any meaningful recovery. Staying in stables for now. 📉</p>
+<div class="flex gap-6 mt-2">
+<button class="flex items-center gap-2 text-zinc-500 hover:text-zinc-300 text-xs uppercase font-data-mono">
+<span class="material-symbols-outlined text-sm">chat_bubble</span> 112 REPLIES
+                                        </button>
+<button class="flex items-center gap-2 text-zinc-500 hover:text-zinc-300 text-xs uppercase font-data-mono">
+<span class="material-symbols-outlined text-sm">share</span> EXPORT
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar Stats & Trending -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Community Stats -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-6">
+<div class="text-xs font-headline-md uppercase text-[#39FF14] mb-6 tracking-widest">NETWORK_METRICS</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center py-2 border-b border-[#333333]">
+<span class="text-zinc-500 text-xs uppercase">Active Nodes</span>
+<span class="font-data-mono text-[#39FF14]">14,204</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-[#333333]">
+<span class="text-zinc-500 text-xs uppercase">Broadcast Rate</span>
+<span class="font-data-mono text-[#39FF14]">42/MIN</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-zinc-500 text-xs uppercase">Alpha Signal Score</span>
+<span class="font-data-mono text-[#39FF14]">HIGH</span>
+</div>
+</div>
+</div>
+<!-- Trending Topics -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-6">
+<div class="text-xs font-headline-md uppercase text-[#39FF14] mb-6 tracking-widest">HOT_TAGS</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-[#2C2C2C] text-zinc-300 px-3 py-1 text-[10px] font-data-mono border border-[#333333] hover:border-[#39FF14] cursor-pointer transition-colors">#ETHEREUM_ETFS</span>
+<span class="bg-[#2C2C2C] text-zinc-300 px-3 py-1 text-[10px] font-data-mono border border-[#333333] hover:border-[#39FF14] cursor-pointer transition-colors">#SOLANA_BREAKOUT</span>
+<span class="bg-[#2C2C2C] text-zinc-300 px-3 py-1 text-[10px] font-data-mono border border-[#333333] hover:border-[#39FF14] cursor-pointer transition-colors">#FED_RATES</span>
+<span class="bg-[#2C2C2C] text-zinc-300 px-3 py-1 text-[10px] font-data-mono border border-[#333333] hover:border-[#39FF14] cursor-pointer transition-colors">#HALVING_ALPHA</span>
+<span class="bg-[#2C2C2C] text-zinc-300 px-3 py-1 text-[10px] font-data-mono border border-[#333333] hover:border-[#39FF14] cursor-pointer transition-colors">#MEME_FRENZY</span>
+</div>
+</div>
+<!-- Top Contributors -->
+<div class="bg-[#1C1B1B] border border-[#333333] p-6">
+<div class="text-xs font-headline-md uppercase text-[#39FF14] mb-6 tracking-widest">TOP_NODES</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container border border-[#333333] group-hover:border-[#39FF14] transition-colors"></div>
+<div class="text-xs font-bold text-zinc-300">QUANT_QUEEN</div>
+</div>
+<span class="text-[10px] font-data-mono text-[#39FF14]">99.8% ACC</span>
+</div>
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container border border-[#333333] group-hover:border-[#39FF14] transition-colors"></div>
+<div class="text-xs font-bold text-zinc-300">BIT_COWBOY</div>
+</div>
+<span class="text-[10px] font-data-mono text-[#39FF14]">94.2% ACC</span>
+</div>
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container border border-[#333333] group-hover:border-[#39FF14] transition-colors"></div>
+<div class="text-xs font-bold text-zinc-300">SATOSHI_JR</div>
+</div>
+<span class="text-[10px] font-data-mono text-[#39FF14]">91.5% ACC</span>
+</div>
+</div>
+</div>
+<!-- Live Node Feed -->
+<div class="relative overflow-hidden bg-[#1C1B1B] border border-[#333333] p-6">
+<div class="text-xs font-headline-md uppercase text-[#39FF14] mb-6 tracking-widest">LIVE_STREAM</div>
+<div class="space-y-4 opacity-50">
+<div class="text-[10px] font-data-mono text-zinc-500">
+<span class="text-[#39FF14]">[OK]</span> NODE_82: USER_728 BROADCASTED "BULLISH BTC"
+                            </div>
+<div class="text-[10px] font-data-mono text-zinc-500">
+<span class="text-error">[!]</span> NODE_04: LIQUIDATION_WATCH ACTIVATED
+                            </div>
+<div class="text-[10px] font-data-mono text-zinc-500">
+<span class="text-[#39FF14]">[OK]</span> NODE_19: NEW ALPHA_THREAD DETECTED
+                            </div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#1C1B1B] to-transparent"></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-[#0D0D0D]/95 backdrop-blur-md border-t border-[#333333] flex justify-around py-3 px-4 z-50">
+<button class="flex flex-col items-center gap-1 text-[#39FF14]">
+<span class="material-symbols-outlined">hub</span>
+<span class="text-[8px] font-data-mono uppercase">Hub</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[8px] font-data-mono uppercase">Term</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">add_box</span>
+<span class="text-[8px] font-data-mono uppercase">Post</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">show_chart</span>
+<span class="text-[8px] font-data-mono uppercase">Market</span>
+</button>
+</div>
+</body></html>
